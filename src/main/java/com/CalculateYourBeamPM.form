@@ -1,0 +1,2132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.CalculateYourBeamPM">
+  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="5" right="5"/>
+    <constraints>
+      <xy x="20" y="1" width="1219" height="716"/>
+    </constraints>
+    <properties>
+      <background color="-14606047"/>
+      <enabled value="true"/>
+      <foreground color="-14606047"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="92893" binding="dataPanel" layout-manager="GridLayoutManager" row-count="10" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="390" height="-1"/>
+            <preferred-size width="390" height="-1"/>
+            <maximum-size width="390" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <foreground color="-328966"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="c7286" class="javax.swing.JTextField" binding="f1TextField">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="16cbd" class="javax.swing.JLabel" binding="f1Label">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font/>
+              <foreground color="-328966"/>
+              <text value="F1"/>
+            </properties>
+          </component>
+          <component id="6d74f" class="javax.swing.JLabel" binding="f2Label">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="F2"/>
+            </properties>
+          </component>
+          <component id="e389b" class="javax.swing.JTextField" binding="abTextField">
+            <constraints>
+              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="df7dc" class="javax.swing.JLabel" binding="abLabelUnit">
+            <constraints>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <component id="3dcec" class="javax.swing.JLabel" binding="abLabel">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="L1"/>
+            </properties>
+          </component>
+          <component id="64fc7" class="javax.swing.JLabel" binding="bcLabel">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="L2"/>
+            </properties>
+          </component>
+          <component id="5eb1e" class="javax.swing.JLabel" binding="bcLabelUnit">
+            <constraints>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <component id="798ad" class="javax.swing.JTextField" binding="bcTextField">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="c5329" class="javax.swing.JLabel" binding="f3Label">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="F3"/>
+            </properties>
+          </component>
+          <component id="d61b" class="javax.swing.JTextField" binding="f2TextField">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="3cbe0" class="javax.swing.JTextField" binding="f3TextField">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="ca1a5" class="javax.swing.JLabel" binding="cdLabel">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="L3"/>
+            </properties>
+          </component>
+          <component id="53110" class="javax.swing.JLabel" binding="cdLabelUnit">
+            <constraints>
+              <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <component id="84dd3" class="javax.swing.JTextField" binding="cdTextField">
+            <constraints>
+              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="6d21f" class="javax.swing.JLabel" binding="dataLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="32" height="13"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Dane:"/>
+            </properties>
+          </component>
+          <component id="1efdd" class="javax.swing.JLabel" binding="f3LabelUnit">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N]"/>
+            </properties>
+          </component>
+          <component id="241a" class="javax.swing.JLabel" binding="f2LabelUnit">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N]"/>
+            </properties>
+          </component>
+          <component id="f08f4" class="javax.swing.JLabel" binding="f1LabelUnit">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N]"/>
+            </properties>
+          </component>
+          <component id="b12a1" class="javax.swing.JLabel" binding="q3Label">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font/>
+              <foreground color="-328966"/>
+              <text value="Q3"/>
+            </properties>
+          </component>
+          <component id="529de" class="javax.swing.JLabel" binding="f4Label">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="F4"/>
+            </properties>
+          </component>
+          <component id="f16bc" class="javax.swing.JTextField" binding="f4TextField">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="35eac" class="javax.swing.JLabel" binding="f4LabelUnit">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N]"/>
+            </properties>
+          </component>
+          <component id="38cc" class="javax.swing.JLabel" binding="deLabel">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="L4"/>
+            </properties>
+          </component>
+          <component id="a28a6" class="javax.swing.JTextField" binding="deTextField">
+            <constraints>
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="f64e5" class="javax.swing.JLabel" binding="deLabelUnit">
+            <constraints>
+              <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <component id="74321" class="javax.swing.JLabel" binding="f5Label">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="F5"/>
+            </properties>
+          </component>
+          <component id="beccb" class="javax.swing.JTextField" binding="f5TextField">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="9bc0f" class="javax.swing.JLabel" binding="f5LabelUnit">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N]"/>
+            </properties>
+          </component>
+          <component id="6baa3" class="javax.swing.JLabel" binding="q1Label">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="Q1"/>
+            </properties>
+          </component>
+          <component id="73643" class="javax.swing.JLabel" binding="q2Label">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="Q2"/>
+            </properties>
+          </component>
+          <component id="95b8" class="javax.swing.JTextField" binding="q2TextField">
+            <constraints>
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="e39d1" class="javax.swing.JLabel" binding="q2LabelUnit">
+            <constraints>
+              <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N/m]"/>
+            </properties>
+          </component>
+          <component id="d5b8a" class="javax.swing.JTextField" binding="q3TextField">
+            <constraints>
+              <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="9c083" class="javax.swing.JTextField" binding="q1TextField">
+            <constraints>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="ffe93" class="javax.swing.JLabel" binding="q3LabelUnit">
+            <constraints>
+              <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N/m]"/>
+            </properties>
+          </component>
+          <component id="da0e5" class="javax.swing.JLabel" binding="q1LabelUnit">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N/m]"/>
+            </properties>
+          </component>
+          <component id="fb9fa" class="javax.swing.JTextField" binding="efTextField">
+            <constraints>
+              <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="df716" class="javax.swing.JLabel" binding="efLabel">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="L5"/>
+            </properties>
+          </component>
+          <component id="e486c" class="javax.swing.JLabel" binding="efLabelUnit">
+            <constraints>
+              <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <vspacer id="79f32">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="20"/>
+                <maximum-size width="-1" height="20"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <component id="6b952" class="javax.swing.JLabel" binding="q4Label">
+            <constraints>
+              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="Q4"/>
+            </properties>
+          </component>
+          <component id="7f6d1" class="javax.swing.JTextField" binding="q4TextField">
+            <constraints>
+              <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="e1236" class="javax.swing.JLabel" binding="q4LabelUnit">
+            <constraints>
+              <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[N/m]"/>
+            </properties>
+          </component>
+          <component id="a08ba" class="javax.swing.JLabel" binding="q5Label">
+            <constraints>
+              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font/>
+              <foreground color="-328966"/>
+              <text value="Q5"/>
+            </properties>
+          </component>
+          <component id="a8ce3" class="javax.swing.JTextField" binding="q5TextField">
+            <constraints>
+              <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="115" height="-1"/>
+                <preferred-size width="115" height="-1"/>
+                <maximum-size width="115" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="958b8" class="javax.swing.JLabel" binding="q5LabelUnit">
+            <constraints>
+              <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font/>
+              <foreground color="-328966"/>
+              <text value="[N/m]"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="a25b7" binding="imagePanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="980" height="310"/>
+            <preferred-size width="980" height="310"/>
+            <maximum-size width="980" height="310"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <enabled value="true"/>
+          <foreground color="-328966"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="db4a" class="javax.swing.JButton" binding="choseFasteningTypeButton">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <minimum-size width="460" height="30"/>
+                <preferred-size width="460" height="30"/>
+                <maximum-size width="460" height="30"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11184811"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="16" style="1"/>
+              <foreground color="-1"/>
+              <text value="WYBIERZ SPOSÓB ZAMOCOWANIA I OBCIĄŻENIA"/>
+            </properties>
+          </component>
+          <component id="b2648" class="javax.swing.JLabel" binding="imageLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="970" height="225"/>
+                <preferred-size width="970" height="225"/>
+                <maximum-size width="970" height="225"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-1"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="2036b" class="javax.swing.JButton" binding="clearButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="30"/>
+                <preferred-size width="150" height="30"/>
+                <maximum-size width="150" height="30"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11184811"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="16" style="1"/>
+              <foreground color="-1"/>
+              <text value="WYCZYŚĆ"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="3a3a2" binding="mainResultsMainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="1" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="495" height="-1"/>
+            <preferred-size width="495" height="-1"/>
+            <maximum-size width="495" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <foreground color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="9a512" class="javax.swing.JLabel" binding="resultsLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Wyniki:"/>
+            </properties>
+          </component>
+          <scrollpane id="cc6e5" binding="mainResultsScrollPane">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="495" height="232"/>
+                <preferred-size width="495" height="232"/>
+                <maximum-size width="495" height="232"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="a6a9d" binding="mainResultsPanel" layout-manager="GridLayoutManager" row-count="10" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints/>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="9255a" class="javax.swing.JLabel" binding="rayLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Ray"/>
+                    </properties>
+                  </component>
+                  <component id="af4d5" class="javax.swing.JLabel" binding="raxLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rax"/>
+                    </properties>
+                  </component>
+                  <component id="8bd65" class="javax.swing.JTextField" binding="rayTextField">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="6806e" class="javax.swing.JTextField" binding="raxTextField">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="f0c27" class="javax.swing.JLabel" binding="rayLabelUnit">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="a6755" class="javax.swing.JLabel" binding="raxLabelUnit">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="a16ce" class="javax.swing.JLabel" binding="maLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Ma"/>
+                    </properties>
+                  </component>
+                  <component id="6557c" class="javax.swing.JTextField" binding="maTextField">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="2740e" class="javax.swing.JLabel" binding="maLabelUnit">
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="897d7" class="javax.swing.JLabel" binding="rbyLabel">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rby"/>
+                    </properties>
+                  </component>
+                  <component id="71f5f" class="javax.swing.JTextField" binding="rbyTextField">
+                    <constraints>
+                      <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="7a6e2" class="javax.swing.JLabel" binding="rbyLabelUnit">
+                    <constraints>
+                      <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="b8c64" class="javax.swing.JLabel" binding="rbxLabel">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rbx"/>
+                    </properties>
+                  </component>
+                  <component id="6fe2d" class="javax.swing.JTextField" binding="rbxTextField">
+                    <constraints>
+                      <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="4543b" class="javax.swing.JLabel" binding="rbxLabelUnit">
+                    <constraints>
+                      <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="17e88" class="javax.swing.JLabel" binding="mbLabel">
+                    <constraints>
+                      <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Mb"/>
+                    </properties>
+                  </component>
+                  <component id="50c0a" class="javax.swing.JTextField" binding="mbTextField">
+                    <constraints>
+                      <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="80086" class="javax.swing.JLabel" binding="mbLabelUnit">
+                    <constraints>
+                      <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="34022" class="javax.swing.JLabel" binding="rcyLabel">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rcy"/>
+                    </properties>
+                  </component>
+                  <component id="ee5b8" class="javax.swing.JTextField" binding="rcyTextField">
+                    <constraints>
+                      <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="45514" class="javax.swing.JLabel" binding="rcyLabelUnit">
+                    <constraints>
+                      <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="d23ab" class="javax.swing.JLabel" binding="rcxLabel">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rcx"/>
+                    </properties>
+                  </component>
+                  <component id="1948f" class="javax.swing.JTextField" binding="rcxTextField">
+                    <constraints>
+                      <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="e78c4" class="javax.swing.JLabel" binding="mcLabel">
+                    <constraints>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Mc"/>
+                    </properties>
+                  </component>
+                  <component id="c926f" class="javax.swing.JTextField" binding="mcTextField">
+                    <constraints>
+                      <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="97c59" class="javax.swing.JLabel" binding="rcxLabelUnit">
+                    <constraints>
+                      <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="24363" class="javax.swing.JLabel" binding="mcLabelUnit">
+                    <constraints>
+                      <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="18ce2" class="javax.swing.JLabel" binding="reyLabel">
+                    <constraints>
+                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rey"/>
+                    </properties>
+                  </component>
+                  <component id="ab594" class="javax.swing.JLabel" binding="rexLabel">
+                    <constraints>
+                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rex"/>
+                    </properties>
+                  </component>
+                  <component id="904e5" class="javax.swing.JLabel" binding="meLabel">
+                    <constraints>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Me"/>
+                    </properties>
+                  </component>
+                  <component id="2c136" class="javax.swing.JTextField" binding="reyTextField">
+                    <constraints>
+                      <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="e9d53" class="javax.swing.JTextField" binding="rexTextField">
+                    <constraints>
+                      <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="2de81" class="javax.swing.JTextField" binding="meTextField">
+                    <constraints>
+                      <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="2be31" class="javax.swing.JLabel" binding="reyLabelUnit">
+                    <constraints>
+                      <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="f7c76" class="javax.swing.JLabel" binding="rexLabelUnit">
+                    <constraints>
+                      <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="3902" class="javax.swing.JLabel" binding="meLabelUnit">
+                    <constraints>
+                      <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="2dc02" class="javax.swing.JLabel" binding="rdyLabel">
+                    <constraints>
+                      <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rdy"/>
+                    </properties>
+                  </component>
+                  <component id="54732" class="javax.swing.JTextField" binding="rdyTextField">
+                    <constraints>
+                      <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="3f965" class="javax.swing.JLabel" binding="rdyLabelUnit">
+                    <constraints>
+                      <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="bada9" class="javax.swing.JLabel" binding="rdxLabel">
+                    <constraints>
+                      <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rdx"/>
+                    </properties>
+                  </component>
+                  <component id="91676" class="javax.swing.JTextField" binding="rdxTextField">
+                    <constraints>
+                      <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="bda0e" class="javax.swing.JLabel" binding="rdxLabelUnit">
+                    <constraints>
+                      <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="4e730" class="javax.swing.JLabel" binding="mdLabel">
+                    <constraints>
+                      <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Md"/>
+                    </properties>
+                  </component>
+                  <component id="931b4" class="javax.swing.JTextField" binding="mdTextField">
+                    <constraints>
+                      <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="b5b30" class="javax.swing.JLabel" binding="mdLabelUnit">
+                    <constraints>
+                      <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="c61fd" class="javax.swing.JLabel" binding="rfyLabel">
+                    <constraints>
+                      <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rfy"/>
+                    </properties>
+                  </component>
+                  <component id="ce61b" class="javax.swing.JTextField" binding="rfyTextField">
+                    <constraints>
+                      <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="251ed" class="javax.swing.JLabel" binding="rfyLabelUnit">
+                    <constraints>
+                      <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="5a289" class="javax.swing.JLabel" binding="rfxLabel">
+                    <constraints>
+                      <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Rfx"/>
+                    </properties>
+                  </component>
+                  <component id="6a10d" class="javax.swing.JTextField" binding="rfxTextField">
+                    <constraints>
+                      <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="79b09" class="javax.swing.JLabel" binding="rfxLabelUnit">
+                    <constraints>
+                      <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[N]"/>
+                    </properties>
+                  </component>
+                  <component id="2ec19" class="javax.swing.JLabel" binding="mfLabel">
+                    <constraints>
+                      <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Mf"/>
+                    </properties>
+                  </component>
+                  <component id="60ed6" class="javax.swing.JTextField" binding="mfTextField">
+                    <constraints>
+                      <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="820e2" class="javax.swing.JLabel" binding="mfLabelUnit">
+                    <constraints>
+                      <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                  <component id="dbec1" class="javax.swing.JLabel" binding="mgMaxLabel">
+                    <constraints>
+                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="Mgmax"/>
+                    </properties>
+                  </component>
+                  <component id="ec5ae" class="javax.swing.JTextField" binding="mgMaxTextField">
+                    <constraints>
+                      <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="150" height="-1"/>
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-328966"/>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <font name="Consolas" size="13"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="5ce4e" class="javax.swing.JLabel" binding="mgMaxLabelUnit">
+                    <constraints>
+                      <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14606047"/>
+                      <foreground color="-328966"/>
+                      <text value="[Nm] "/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </scrollpane>
+          <component id="8e6e" class="javax.swing.JButton" binding="showDiagramsButton">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="495" height="-1"/>
+                <preferred-size width="495" height="-1"/>
+                <maximum-size width="495" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11184811"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="18" style="1"/>
+              <foreground color="-16454156"/>
+              <text value="POKAŻ WYKRESY (Mg, T)"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="59782" class="javax.swing.JButton" binding="calculateButton">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="390" height="-1"/>
+            <preferred-size width="390" height="-1"/>
+            <maximum-size width="390" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-11184811"/>
+          <enabled value="true"/>
+          <font name="Consolas" size="18" style="1"/>
+          <foreground color="-16454156"/>
+          <text value="OBLICZ"/>
+        </properties>
+      </component>
+      <grid id="1e7f2" binding="resultsCrossSectionPanel" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="220" height="-1"/>
+            <preferred-size width="220" height="-1"/>
+            <maximum-size width="220" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <enabled value="true"/>
+          <foreground color="-328966"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="20ad0" class="javax.swing.JLabel" binding="resultsCrossSectionLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Wyniki przekrój:"/>
+            </properties>
+          </component>
+          <component id="10eaf" class="javax.swing.JRadioButton" binding="kgRadioButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-1"/>
+              <selected value="true"/>
+              <text value="kg"/>
+            </properties>
+          </component>
+          <component id="806bb" class="javax.swing.JLabel" binding="crossSectionCalculateForLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Licz przekrój pod:"/>
+            </properties>
+          </component>
+          <component id="81722" class="javax.swing.JRadioButton" binding="wgRadioButton">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-1"/>
+              <selected value="false"/>
+              <text value="Wg"/>
+            </properties>
+          </component>
+          <grid id="f2efc" binding="crossSectionDataPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="455c7" class="javax.swing.JLabel" binding="crossSectionDataLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <font name="Consolas" size="16"/>
+                  <foreground color="-328966"/>
+                  <text value="Dane przekrój:"/>
+                </properties>
+              </component>
+              <component id="6bfd7" class="javax.swing.JLabel" binding="iLabel2">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="Iz"/>
+                </properties>
+              </component>
+              <component id="69c5c" class="javax.swing.JTextField" binding="iTextField">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="130" height="-1"/>
+                    <preferred-size width="130" height="-1"/>
+                    <maximum-size width="130" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-328966"/>
+                  <editable value="true"/>
+                  <enabled value="true"/>
+                  <font name="Consolas" size="13"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="9a40d" class="javax.swing.JLabel" binding="iLabelUnit2">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="21" height="16"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="[m^4]"/>
+                </properties>
+              </component>
+              <component id="f8547" class="javax.swing.JLabel" binding="kgLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="kg"/>
+                </properties>
+              </component>
+              <component id="414da" class="javax.swing.JTextField" binding="kgTextField">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="130" height="-1"/>
+                    <preferred-size width="130" height="-1"/>
+                    <maximum-size width="130" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <editable value="true"/>
+                  <enabled value="false"/>
+                  <font name="Consolas" size="13"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="a17b1" class="javax.swing.JLabel" binding="kgLabelUnit">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="21" height="16"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="[MPa]"/>
+                </properties>
+              </component>
+              <component id="a8f43" class="javax.swing.JLabel" binding="emaxLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="emax"/>
+                </properties>
+              </component>
+              <component id="bfebb" class="javax.swing.JTextField" binding="emaxTextField">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="130" height="-1"/>
+                    <preferred-size width="130" height="-1"/>
+                    <maximum-size width="130" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-328966"/>
+                  <editable value="true"/>
+                  <enabled value="true"/>
+                  <font name="Consolas" size="13"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="83ab8" class="javax.swing.JLabel" binding="emaxLabelUnit">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="21" height="16"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <foreground color="-328966"/>
+                  <text value="[m]"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="18a73" class="javax.swing.JLabel" binding="kgResultLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="kg &gt;="/>
+            </properties>
+          </component>
+          <component id="da1f8" class="javax.swing.JTextField" binding="kgResultTextField">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="125" height="-1"/>
+                <preferred-size width="125" height="-1"/>
+                <maximum-size width="125" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="c5b43" class="javax.swing.JLabel" binding="kgResultLabelUnit">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[MPa]"/>
+            </properties>
+          </component>
+          <component id="a677f" class="javax.swing.JLabel" binding="wgResultLabel">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="Wg &gt;="/>
+            </properties>
+          </component>
+          <component id="274be" class="javax.swing.JTextField" binding="wgResultTextField">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="125" height="-1"/>
+                <preferred-size width="125" height="-1"/>
+                <maximum-size width="125" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="f2595" class="javax.swing.JLabel" binding="wgResultLabelUnit">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m^3]"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="bd52e" binding="rightPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <foreground color="-3147014"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="30f1a" binding="requirementsPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="14"/>
+              <foreground color="-328966"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="962cf" class="javax.swing.JLabel" binding="requirementsCalculateLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <font name="Consolas" size="16"/>
+                  <foreground color="-328966"/>
+                  <text value="Wymagane do obliczeń:"/>
+                </properties>
+              </component>
+              <component id="256e7" class="javax.swing.JCheckBox" binding="abRequiredCheckBox">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="L1"/>
+                </properties>
+              </component>
+              <component id="e83c6" class="javax.swing.JCheckBox" binding="deRequiredCheckBox">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="L4"/>
+                </properties>
+              </component>
+              <component id="c8499" class="javax.swing.JCheckBox" binding="bcRequiredCheckBox">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="L2"/>
+                </properties>
+              </component>
+              <component id="f2574" class="javax.swing.JCheckBox" binding="cdRequiredCheckBox">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="L3"/>
+                </properties>
+              </component>
+              <component id="7d2d6" class="javax.swing.JCheckBox" binding="efRequiredCheckBox">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="L5"/>
+                </properties>
+              </component>
+              <component id="de7c" class="javax.swing.JCheckBox" binding="f1RequiredCheckBox">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="F1"/>
+                </properties>
+              </component>
+              <component id="c2519" class="javax.swing.JCheckBox" binding="q1RequiredCheckBox">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="Q1"/>
+                </properties>
+              </component>
+              <component id="e216a" class="javax.swing.JCheckBox" binding="f2RequiredCheckBox">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="F2"/>
+                </properties>
+              </component>
+              <component id="db4b0" class="javax.swing.JCheckBox" binding="f3RequiredCheckBox">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="F3"/>
+                </properties>
+              </component>
+              <component id="11" class="javax.swing.JCheckBox" binding="f4RequiredCheckBox">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="F4"/>
+                </properties>
+              </component>
+              <component id="34605" class="javax.swing.JCheckBox" binding="f5RequiredCheckBox">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="F5"/>
+                </properties>
+              </component>
+              <component id="8456f" class="javax.swing.JCheckBox" binding="q2RequiredCheckBox">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="Q2"/>
+                </properties>
+              </component>
+              <component id="236a3" class="javax.swing.JCheckBox" binding="q3RequiredCheckBox">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="Q3"/>
+                </properties>
+              </component>
+              <component id="1d62" class="javax.swing.JCheckBox" binding="q4RequiredCheckBox">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="Q4"/>
+                </properties>
+              </component>
+              <component id="2c8e1" class="javax.swing.JCheckBox" binding="q5RequiredCheckBox">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-14606047"/>
+                  <enabled value="false"/>
+                  <foreground color="-328966"/>
+                  <selected value="false"/>
+                  <text value="Q5"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="9f7ee" class="javax.swing.JButton" binding="calculateCrossSectionButton">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11184811"/>
+          <font name="Consolas" size="18" style="1"/>
+          <foreground color="-16454156"/>
+          <text value="OBLICZ PRZEKRÓJ"/>
+        </properties>
+      </component>
+      <grid id="da957" binding="deflectionPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="220" height="-1"/>
+            <preferred-size width="220" height="-1"/>
+            <maximum-size width="220" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <foreground color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="48929" class="javax.swing.JLabel" binding="deflectionDataLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Dane ugięcie:"/>
+            </properties>
+          </component>
+          <component id="416f8" class="javax.swing.JLabel" binding="iLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="Iz"/>
+            </properties>
+          </component>
+          <component id="625ec" class="javax.swing.JTextField" binding="iTextField2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="130" height="-1"/>
+                <preferred-size width="130" height="-1"/>
+                <maximum-size width="130" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="a04b6" class="javax.swing.JLabel" binding="iLabelUnit">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m^4]"/>
+            </properties>
+          </component>
+          <component id="2d5f7" class="javax.swing.JLabel" binding="deflectionResultsLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Wyniki ugięcie:"/>
+            </properties>
+          </component>
+          <component id="d65cc" class="javax.swing.JLabel" binding="ymaxLAbel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="y max"/>
+            </properties>
+          </component>
+          <component id="11aaf" class="javax.swing.JLabel" binding="ymaxLabelUnit">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[m]"/>
+            </properties>
+          </component>
+          <component id="59a66" class="javax.swing.JTextField" binding="ymaxTextField">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="130" height="-1"/>
+                <preferred-size width="130" height="-1"/>
+                <maximum-size width="130" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="15dd6" class="javax.swing.JLabel" binding="eLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="E"/>
+            </properties>
+          </component>
+          <component id="bddb9" class="javax.swing.JTextField" binding="youngModulusTextField">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="130" height="-1"/>
+                <preferred-size width="130" height="-1"/>
+                <maximum-size width="130" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-328966"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="13"/>
+              <foreground color="-16777216"/>
+            </properties>
+          </component>
+          <component id="d4781" class="javax.swing.JLabel" binding="eLabelUnit">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="21" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <foreground color="-328966"/>
+              <text value="[GPa]"/>
+            </properties>
+          </component>
+          <component id="47246" class="javax.swing.JRadioButton" binding="numericalCalculationCheck">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="true"/>
+              <font name="Consolas" size="14"/>
+              <foreground color="-1"/>
+              <selected value="false"/>
+              <text value="Numerycznie?"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="e579a" class="javax.swing.JButton" binding="calculateDeflectionButton">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11184811"/>
+          <font name="Consolas" size="14" style="1"/>
+          <foreground color="-16454156"/>
+          <text value="OBLICZ UGIĘCIE"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

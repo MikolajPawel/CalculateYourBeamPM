@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: com.Main
+Class-Path: jfreechart-swt-1.0.jar jcommon-1.0.23.jar fontbox-2.0.27.jar
+  commons-logging-1.2.jar jfreechart-1.0.19.jar org.eclipse.swt.cocoa.ma
+ cosx.x86_64-4.3.jar swtgraphics2d-1.0.jar bcprov-jdk15on-1.70.jar pdfbo
+ x-2.0.27.jar
+
