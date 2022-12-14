@@ -313,6 +313,9 @@ public class CalculateYourBeamPM{
                         }
                         showResults(calculate.calculations());
                         resetCrossSectionPanel("clear");
+                        iTextField2.setText("");
+                        youngModulusTextField.setText("");
+                        ymaxTextField.setText("");
                     }
 
                 }
