@@ -1,3 +1,3 @@
 # CalculateYourBeamPM
-SDK: 17 !!!
+SDK: 17 
 <br />
