@@ -620,12 +620,12 @@ public class FasteningType {
         if(!isLast){
             for (int k = 0; k <(nodes-1); k++) {
                 series.add(x[k], TOrMgOrY[k]);
-                if(!series.equals(ySeries) && (k%(nodes/25) == 0)){series.add(x[k], 0);}
+                if(!series.equals(ySeries) && (k%(nodes/15) == 0)){series.add(x[k], 0);}
             }
         }else{
             for (int k = 0; k < nodes; k++) {
                 series.add(x[k], TOrMgOrY[k]);
-                if(!series.equals(ySeries) && (k%(nodes/25) == 0 || k == (nodes-1))){series.add(x[k], 0);}
+                if(!series.equals(ySeries) && (k%(nodes/15) == 0 || k == (nodes-1))){series.add(x[k], 0);}
             }
         }
     }

@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="5" right="5"/>
     <constraints>
-      <xy x="20" y="1" width="1219" height="716"/>
+      <xy x="20" y="1" width="1219" height="712"/>
     </constraints>
     <properties>
       <background color="-14606047"/>
@@ -1721,224 +1721,6 @@
           </component>
         </children>
       </grid>
-      <grid id="bd52e" binding="rightPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14606047"/>
-          <foreground color="-3147014"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <grid id="30f1a" binding="requirementsPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14606047"/>
-              <font name="Consolas" size="14"/>
-              <foreground color="-328966"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="962cf" class="javax.swing.JLabel" binding="requirementsCalculateLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <font name="Consolas" size="16"/>
-                  <foreground color="-328966"/>
-                  <text value="Wymagane do obliczeń:"/>
-                </properties>
-              </component>
-              <component id="256e7" class="javax.swing.JCheckBox" binding="abRequiredCheckBox">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="L1"/>
-                </properties>
-              </component>
-              <component id="e83c6" class="javax.swing.JCheckBox" binding="deRequiredCheckBox">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="L4"/>
-                </properties>
-              </component>
-              <component id="c8499" class="javax.swing.JCheckBox" binding="bcRequiredCheckBox">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="L2"/>
-                </properties>
-              </component>
-              <component id="f2574" class="javax.swing.JCheckBox" binding="cdRequiredCheckBox">
-                <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="L3"/>
-                </properties>
-              </component>
-              <component id="7d2d6" class="javax.swing.JCheckBox" binding="efRequiredCheckBox">
-                <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="L5"/>
-                </properties>
-              </component>
-              <component id="de7c" class="javax.swing.JCheckBox" binding="f1RequiredCheckBox">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="F1"/>
-                </properties>
-              </component>
-              <component id="c2519" class="javax.swing.JCheckBox" binding="q1RequiredCheckBox">
-                <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="Q1"/>
-                </properties>
-              </component>
-              <component id="e216a" class="javax.swing.JCheckBox" binding="f2RequiredCheckBox">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="F2"/>
-                </properties>
-              </component>
-              <component id="db4b0" class="javax.swing.JCheckBox" binding="f3RequiredCheckBox">
-                <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="F3"/>
-                </properties>
-              </component>
-              <component id="11" class="javax.swing.JCheckBox" binding="f4RequiredCheckBox">
-                <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="F4"/>
-                </properties>
-              </component>
-              <component id="34605" class="javax.swing.JCheckBox" binding="f5RequiredCheckBox">
-                <constraints>
-                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="F5"/>
-                </properties>
-              </component>
-              <component id="8456f" class="javax.swing.JCheckBox" binding="q2RequiredCheckBox">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="Q2"/>
-                </properties>
-              </component>
-              <component id="236a3" class="javax.swing.JCheckBox" binding="q3RequiredCheckBox">
-                <constraints>
-                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="Q3"/>
-                </properties>
-              </component>
-              <component id="1d62" class="javax.swing.JCheckBox" binding="q4RequiredCheckBox">
-                <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="Q4"/>
-                </properties>
-              </component>
-              <component id="2c8e1" class="javax.swing.JCheckBox" binding="q5RequiredCheckBox">
-                <constraints>
-                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-14606047"/>
-                  <enabled value="false"/>
-                  <foreground color="-328966"/>
-                  <selected value="false"/>
-                  <text value="Q5"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-        </children>
-      </grid>
       <component id="9f7ee" class="javax.swing.JButton" binding="calculateCrossSectionButton">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -2127,6 +1909,211 @@
           <text value="OBLICZ UGIĘCIE"/>
         </properties>
       </component>
+      <grid id="e591" binding="requirementsPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14606047"/>
+          <font name="Consolas" size="14"/>
+          <foreground color="-328966"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="c5686" class="javax.swing.JLabel" binding="requirementsCalculateLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <font name="Consolas" size="16"/>
+              <foreground color="-328966"/>
+              <text value="Wymagane do obliczeń:"/>
+            </properties>
+          </component>
+          <component id="df12a" class="javax.swing.JCheckBox" binding="abRequiredCheckBox">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="L1"/>
+            </properties>
+          </component>
+          <component id="c4d49" class="javax.swing.JCheckBox" binding="deRequiredCheckBox">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="L4"/>
+            </properties>
+          </component>
+          <component id="257e1" class="javax.swing.JCheckBox" binding="bcRequiredCheckBox">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="L2"/>
+            </properties>
+          </component>
+          <component id="b54e7" class="javax.swing.JCheckBox" binding="cdRequiredCheckBox">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="L3"/>
+            </properties>
+          </component>
+          <component id="865f9" class="javax.swing.JCheckBox" binding="efRequiredCheckBox">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="L5"/>
+            </properties>
+          </component>
+          <component id="80510" class="javax.swing.JCheckBox" binding="f1RequiredCheckBox">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="F1"/>
+            </properties>
+          </component>
+          <component id="212fa" class="javax.swing.JCheckBox" binding="q1RequiredCheckBox">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="Q1"/>
+            </properties>
+          </component>
+          <component id="dbbec" class="javax.swing.JCheckBox" binding="f2RequiredCheckBox">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="F2"/>
+            </properties>
+          </component>
+          <component id="dd6fc" class="javax.swing.JCheckBox" binding="f3RequiredCheckBox">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="F3"/>
+            </properties>
+          </component>
+          <component id="683eb" class="javax.swing.JCheckBox" binding="f4RequiredCheckBox">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="F4"/>
+            </properties>
+          </component>
+          <component id="505bf" class="javax.swing.JCheckBox" binding="f5RequiredCheckBox">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="F5"/>
+            </properties>
+          </component>
+          <component id="c3473" class="javax.swing.JCheckBox" binding="q2RequiredCheckBox">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="Q2"/>
+            </properties>
+          </component>
+          <component id="fe07d" class="javax.swing.JCheckBox" binding="q3RequiredCheckBox">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="Q3"/>
+            </properties>
+          </component>
+          <component id="a2dba" class="javax.swing.JCheckBox" binding="q4RequiredCheckBox">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="Q4"/>
+            </properties>
+          </component>
+          <component id="a07fe" class="javax.swing.JCheckBox" binding="q5RequiredCheckBox">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14606047"/>
+              <enabled value="false"/>
+              <foreground color="-328966"/>
+              <selected value="false"/>
+              <text value="Q5"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
     </children>
   </grid>
 </form>

@@ -11,7 +11,6 @@ public class CalculateYourBeamPM{
     private JPanel dataPanel;
     private JPanel resultsCrossSectionPanel;
     private JPanel imagePanel;
-    private JPanel rightPanel;
     private JButton calculateButton;
     private JLabel dataLabel;
     private JLabel resultsLabel;
@@ -81,7 +80,6 @@ public class CalculateYourBeamPM{
     private JTextField rfxTextField;
     private JTextField mfTextField;
     private JLabel requirementsCalculateLabel;
-    private JPanel requirementsPanel;
     private JCheckBox abRequiredCheckBox;
     private JCheckBox cdRequiredCheckBox;
     private JCheckBox bcRequiredCheckBox;
@@ -177,6 +175,7 @@ public class CalculateYourBeamPM{
     private JTextField emaxTextField;
     private JLabel emaxLabelUnit;
     private JRadioButton numericalCalculationCheck;
+    private JPanel requirementsPanel;
 
     public MenuBarWithCustomBgColor menuBar = new MenuBarWithCustomBgColor();
     private JMenu fileMenu = new JMenu();
