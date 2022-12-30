@@ -307,6 +307,30 @@ public class FasteningVisions {
                 this.savingImagePath = "/fastening_images/type_9_save.png";
             }
 
+            case 10 -> {
+                this.vis = new boolean[]{
+                        true, true, false, false, false,
+                        true, false, false, false, false,
+                        true, true, true, true, true,
+
+                        true, false, false,
+                        false, false, false,
+                        false, false, false,
+                        false, false, false,
+                        false, false, false,
+                        true, false, false,
+
+                        false, false, false, false, false,
+                        false, false, false, false, false,
+                        true, true, true, true, true,
+
+                        true
+                };
+                this.imagePath = "/fastening_images/type_10.png";
+                this.type = 10;
+                this.savingImagePath = "/fastening_images/type_10_save.png";
+            }
+
 
             }
 

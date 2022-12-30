@@ -17,6 +17,7 @@ public abstract class LoadFasteningType {
             case 7 -> calculate = new FasteningType_7(values,optionPanes,false);
             case 8 -> calculate = new FasteningType_8(values,optionPanes,false);
             case 9 -> calculate = new FasteningType_9(values,optionPanes,false);
+            case 10 -> calculate = new FasteningType_10(values,optionPanes,false);
         }
         return calculate;
     }

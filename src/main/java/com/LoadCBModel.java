@@ -7,7 +7,7 @@ public abstract class LoadCBModel {
     public static DefaultComboBoxModel<Icon> comboBoxModel(){
         DefaultComboBoxModel<Icon> comboBoxModel = new DefaultComboBoxModel<>();
         String source = null;
-        for(int i=0; i<10; i++){
+        for(int i=0; i<11; i++){
             switch(i){
                 case 0 -> source = "/fastening_images/default.png";
                 case 1 -> source = "/fastening_images/type_1.png";
@@ -19,6 +19,7 @@ public abstract class LoadCBModel {
                 case 7 -> source = "/fastening_images/type_7.png";
                 case 8 -> source = "/fastening_images/type_8.png";
                 case 9 -> source = "/fastening_images/type_9.png";
+                case 10 -> source = "/fastening_images/type_10.png";
             }
             comboBoxModel.addElement(new ImageIcon(LoadCBModel.class.getResource(source)));
         }
