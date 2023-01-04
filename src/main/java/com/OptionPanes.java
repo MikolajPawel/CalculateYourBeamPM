@@ -20,6 +20,7 @@ public class OptionPanes {
     String fileExistQuestion;
     String clearQuestion;
     String clear;
+    String deflectionAnalysisCantContinue;
 
 
     public void setLanguage(Language lang){
@@ -38,6 +39,7 @@ public class OptionPanes {
         this.fileExistQuestion = lang.fileExistQuestion;
         this.clear = lang.clear;
         this.clearQuestion = lang.clearQuestion;
+        this.deflectionAnalysisCantContinue = lang.deflectionAnalysisCantContinue;
     }
 
     public void showWarning(String type){
@@ -46,6 +48,7 @@ public class OptionPanes {
         if(type.equals("errorDidNotCalculate")){showWarningPane(errorDidNotCalculate);}
         if(type.equals("cantCalculate")){showWarningPane(cantCalculate);}
         if(type.equals("errorNotEverythingIsCalculated")){showWarningPane(errorNotEverythingIsCalculated);}
+        if(type.equals("deflectionAnalysisStop")){showWarningPane(deflectionAnalysisCantContinue);}
     }
 
     public int askYesNoUser(String type){

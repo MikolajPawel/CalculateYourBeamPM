@@ -1,6 +1,7 @@
 package com.fastening_types;
 
 import com.OptionPanes;
+import org.eclipse.swt.internal.C;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -8,7 +9,10 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+import java.awt.image.BufferedImage;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FasteningType {
 
@@ -43,7 +47,7 @@ public class FasteningType {
         if(isDefault){
             nodes = 2;
         }else {
-            nodes = 10000;
+            nodes = 10001;
         }
         this.isDefault = isDefault;
         this.optionPanes = optionPanes;
@@ -498,23 +502,23 @@ public class FasteningType {
     }
 
     public void setX(double dividedX, int cs){
-            double[] db = null;
+            double[] x = null;
             switch (cs){
-                case 0 -> db = xAB;
-                case 1 -> db = xBC;
-                case 2 -> db = xCD;
-                case 3 -> db = xDE;
-                case 4 -> db = xEF;
+                case 0 -> x = xAB;
+                case 1 -> x = xBC;
+                case 2 -> x = xCD;
+                case 3 -> x = xDE;
+                case 4 -> x = xEF;
             }
 
             if(cs != 0){
-                db[0] = this.x;
+                x[0] = this.x;
             }else{
-                db[0] = 0;
+                x[0] = 0;
             }
 
             for (int k=1; k<nodes; k++){
-                db[k] = db[k-1] + dividedX;
+                x[k] = x[k-1] + dividedX;
             }
 
     }
@@ -523,6 +527,8 @@ public class FasteningType {
     public JFreeChart mgChart;
     public JFreeChart tChart;
     public JFreeChart yChart;
+    public BufferedImage yChartAna;
+    public BufferedImage yChartNum;
     public String kgOrWg;
     public double kgOrWgResult;
     public double kgOrWgValue;
@@ -618,7 +624,7 @@ public class FasteningType {
 
     public void series(XYSeries series, double[] x, double[] TOrMgOrY, boolean isLast){
         if(!isLast){
-            for (int k = 0; k <(nodes-1); k++) {
+            for (int k = 0; k < (nodes-1); k++) {
                 series.add(x[k], TOrMgOrY[k]);
                 if(!series.equals(ySeries) && (k%(nodes/15) == 0)){series.add(x[k], 0);}
             }
@@ -661,6 +667,19 @@ public class FasteningType {
                     yDiagramTitle, "x[m]","y[m]",yDataset,
                     PlotOrientation.VERTICAL,false,true,false);
 
+
+            if(yNumerically){
+                peaks(peaksXNumerically, peaksYNumerically);
+                yChart.setTitle("N");
+                yChartNum = yChart.createBufferedImage(500, 400);
+                yChart.setTitle(yDiagramTitleNumerical);
+            }else{
+                peaks(peaksXAnalytically, peaksYAnalytically);
+                yChart.setTitle("A");
+                yChartAna = yChart.createBufferedImage(500, 400);
+                yChart.setTitle(yDiagramTitle);
+            }
+
         }
 
     }
@@ -676,6 +695,7 @@ public class FasteningType {
             }else{
                 yChart.setTitle(yDiagramTitle);
             }
+
         }
     }
 
@@ -695,7 +715,8 @@ public class FasteningType {
         }
         if(option.equals("y")){
             changeDiagramLang("y");
-            ChartFrame yFrame = new ChartFrame("y", yChart);
+            ChartFrame yFrame;
+            yFrame = new ChartFrame("y", yChart);
             yFrame.setSize(500, 400);
             yFrame.setVisible(true);
         }
@@ -916,6 +937,8 @@ public class FasteningType {
             calculateDEF();
             calculateTOrMgOrDeflection("YEF");
         }
+
+
 
     }
 
@@ -1215,6 +1238,107 @@ public class FasteningType {
         }
 
         return maxI;
+    }
+
+    public List<Double> peaksXNumerically = new ArrayList<>();
+    public List<Double> peaksYNumerically = new ArrayList<>();
+
+    public List<Double> peaksXAnalytically = new ArrayList<>();
+    public List<Double> peaksYAnalytically = new ArrayList<>();
+
+
+    private void peaks(List<Double> peaksX, List<Double> peaksY){
+
+        peaksX.clear();
+        peaksY.clear();
+
+        peaksX.add(ySeries.getDataItem(0).getXValue());
+        peaksY.add(ySeries.getDataItem(0).getYValue());
+
+
+        for(int i = 1; i < (ySeries.getItemCount()-2); i++){
+            double valueAt_i_minus1 = Math.abs(ySeries.getDataItem(i-1).getYValue());
+            double valueAt_i = Math.abs(ySeries.getDataItem(i).getYValue());
+            double valueAt_i_plus1 = Math.abs(ySeries.getDataItem(i+1).getYValue());
+
+            if(valueAt_i >= valueAt_i_minus1 && valueAt_i > valueAt_i_plus1){
+                peaksX.add(ySeries.getDataItem(i).getXValue());
+                peaksY.add(ySeries.getDataItem(i).getYValue());
+            }
+
+        }
+
+        peaksX.add(ySeries.getDataItem(ySeries.getItemCount()-1).getXValue());
+        peaksY.add(ySeries.getDataItem(ySeries.getItemCount()-1).getYValue());
+
+    }
+
+    public List<List<String>> doDeflectionAnalysis(){
+        List<List<String>> deflectionAnalysisResults = new ArrayList<>();
+        List<String> analysisCheck = new ArrayList<>();
+        if(peaksXAnalytically.isEmpty() || peaksXNumerically.isEmpty()){
+
+            analysisCheck.add("0");
+            deflectionAnalysisResults.add(analysisCheck);
+
+        }else {
+            analysisCheck.add("1");
+
+            DecimalFormat df = new DecimalFormat("#.#");
+            df.setMaximumFractionDigits(20);
+
+            if(peaksXNumerically.size() == peaksXAnalytically.size()){
+                analysisCheck.add("1");
+                analysisCheck.add(String.valueOf(peaksXAnalytically.size()));
+
+                deflectionAnalysisResults.add(analysisCheck);
+                int iteration = peaksXAnalytically.size();
+
+                for(int i=0; i<iteration; i++){
+                    List<String> peaksAnalysis = new ArrayList<>();
+
+                    double xAnalytically = peaksXAnalytically.get(i);
+                    double yAnalytically = peaksYAnalytically.get(i);
+                    double xNumerically  = peaksXNumerically.get(i);
+                    double yNumerically  = peaksYNumerically.get(i);
+                    double deltaError = (Math.abs(yAnalytically - yNumerically)/Math.abs(yAnalytically))*100;
+
+                    peaksAnalysis.add(String.valueOf(df.format(xAnalytically)));
+                    peaksAnalysis.add(String.valueOf(df.format(yAnalytically)));
+                    peaksAnalysis.add(String.valueOf(df.format(xNumerically)));
+                    peaksAnalysis.add(String.valueOf(df.format(yNumerically)));
+                    peaksAnalysis.add(String.valueOf(df.format(deltaError)));
+
+                    deflectionAnalysisResults.add(peaksAnalysis);
+                }
+
+            }else {
+                analysisCheck.add("0");
+
+                analysisCheck.add(String.valueOf(peaksXAnalytically.size()));
+                analysisCheck.add(String.valueOf(peaksXNumerically.size()));
+                deflectionAnalysisResults.add(analysisCheck);
+
+                for(int i=0; i<peaksXAnalytically.size(); i++){
+                    List<String> peaksAnalytically = new ArrayList<>();
+
+                    peaksAnalytically.add(String.valueOf(df.format(peaksXAnalytically.get(i))));
+                    peaksAnalytically.add(String.valueOf(df.format(peaksYAnalytically.get(i))));
+
+                    deflectionAnalysisResults.add(peaksAnalytically);
+                }
+                for(int i=0; i<peaksXNumerically.size(); i++){
+                    List<String> peaksNumerically = new ArrayList<>();
+
+                    peaksNumerically.add(String.valueOf(df.format(peaksXNumerically.get(i))));
+                    peaksNumerically.add(String.valueOf(df.format(peaksYNumerically.get(i))));
+
+                    deflectionAnalysisResults.add(peaksNumerically);
+                }
+            }
+        }
+
+        return deflectionAnalysisResults;
     }
 
 }

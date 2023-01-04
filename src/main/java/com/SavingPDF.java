@@ -305,7 +305,12 @@ public class SavingPDF {
 
                     calculation.changeDiagramLang("y");
 
-                    BufferedImage yDiagram = calculation.yChart.createBufferedImage(500, 400);
+                    BufferedImage yDiagram;
+
+
+                    yDiagram = calculation.yChart.createBufferedImage(500, 400);
+
+
                     PDImageXObject yChart = JPEGFactory.createFromImage(doc, yDiagram,1f);
                     content3.drawImage(yChart,30,430);
 

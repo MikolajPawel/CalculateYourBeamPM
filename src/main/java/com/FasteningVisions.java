@@ -132,7 +132,7 @@ public class FasteningVisions {
                         false, false, false, false, false,
                         true, false, false, false, false,
 
-                        true
+                        false
                 };
                 this.imagePath = "/fastening_images/type_2.png";
                 this.type = 2;

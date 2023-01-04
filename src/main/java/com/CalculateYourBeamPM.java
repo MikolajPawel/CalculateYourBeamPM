@@ -4,6 +4,7 @@ import com.fastening_types.FasteningType;
 
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
+import java.util.List;
 
 
 public class CalculateYourBeamPM{
@@ -180,7 +181,8 @@ public class CalculateYourBeamPM{
     public MenuBarWithCustomBgColor menuBar = new MenuBarWithCustomBgColor();
     private JMenu fileMenu = new JMenu();
     private JMenuItem savingToPDFMenu = new JMenuItem();
-
+    private JMenu developerAnalysisMenu = new JMenu();
+    private JMenuItem deflectionAccuracyAnalysisOption = new JMenuItem();
 
     FasteningType calculate;
     FasteningVisions visionType = new FasteningVisions(0);
@@ -188,6 +190,7 @@ public class CalculateYourBeamPM{
     Language lang = new Language();
     OptionPanes optionPanes = new OptionPanes();
     SavingPDF savingPDF = new SavingPDF();
+    SavingPDFDeveloper savingPDFDeveloper = new SavingPDFDeveloper();
     JFrame mainFrame = new JFrame("Calculate Your Beam PM");
 
     public CalculateYourBeamPM() {
@@ -208,9 +211,9 @@ public class CalculateYourBeamPM{
         mainFrame.pack();
         mainFrame.setResizable(false);
 
-        createVisionForTypeOfFastening();
-
         calculate = LoadFasteningType.calculate(visionType.type, getValues(), optionPanes);
+
+        createVisionForTypeOfFastening();
 
         setLanguage();
 
@@ -226,7 +229,6 @@ public class CalculateYourBeamPM{
         clearButton.addActionListener(e -> {
             if(optionPanes.askYesNoUser("clearQuestion") == 0){
                 createVisionForTypeOfFastening();
-                calculate.canGoFurther = false;
                 resetCrossSectionPanel("clear");
             }
         });
@@ -317,6 +319,25 @@ public class CalculateYourBeamPM{
                         ymaxTextField.setText("");
                     }
 
+                    case "DeflectionAnalysis" -> {
+                        progressFrame = new ProgressFrame(lang.progressFasteningMsg,lang.progressTitle);
+                        List<List<String>> result;
+                        result = calculate.doDeflectionAnalysis();
+                        if(result.get(0).get(0).equals("1")){
+                            savingPDFDeveloper.saveToPDF(result, visionType.savingImagePath, optionPanes,
+                                    calculate.yChartAna, calculate.yChartNum);
+                            if(!savingPDFDeveloper.savingCheck && !savingPDFDeveloper.cancelCheck){
+                                optionPanes.showWarning("somethingWentWrong");
+                            }else if(savingPDFDeveloper.savingCheck && !savingPDFDeveloper.cancelCheck){
+                            savingPDFDeveloper.savingCheck = false;
+                            }
+                        }else{
+                            optionPanes.showWarning("deflectionAnalysisStop");
+                        }
+                        savingPDFDeveloper.canProceed = false;
+
+                    }
+
                 }
 
                 mainFrame.setEnabled(true);
@@ -332,7 +353,6 @@ public class CalculateYourBeamPM{
         if(fasteningChose.getSelectedChoice() != visionType.type){
             visionType = new FasteningVisions(fasteningChose.getSelectedChoice());
             createVisionForTypeOfFastening();
-            calculate.canGoFurther = false;
             resetCrossSectionPanel("clear");
         }
     }
@@ -452,6 +472,11 @@ public class CalculateYourBeamPM{
         numericalCalculationCheck.setSelected(false);
         numericalCalculationCheck.setEnabled(visionType.vis[48]);
 
+        calculate.canGoFurther = false;
+        calculate.peaksYNumerically.clear();
+        calculate.peaksXNumerically.clear();
+        calculate.peaksXAnalytically.clear();
+        calculate.peaksYAnalytically.clear();
 
         try {
             imageLabel.setIcon(new ImageIcon(this.getClass().getResource(visionType.imagePath)));
@@ -685,6 +710,8 @@ public class CalculateYourBeamPM{
 
         fileMenu.setText(lang.file);
         savingToPDFMenu.setText(lang.saving);
+        developerAnalysisMenu.setText(lang.developerAnalysis);
+        deflectionAccuracyAnalysisOption.setText(lang.deflectionAnalysis);
         choseFasteningTypeButton.setText(lang.fasteningType);
         dataLabel.setText(lang.data);
         resultsLabel.setText(lang.results);
@@ -693,6 +720,7 @@ public class CalculateYourBeamPM{
         resultsCrossSectionLabel.setText(lang.resultsCrossSection);
         calculateCrossSectionButton.setText(lang.calculateCrossSection);
         savingPDF.setSavingLanguage(lang.data, lang.results, optionPanes);
+        savingPDFDeveloper.setSavingLanguage(optionPanes, lang.alignPositive, lang.alignNegative);
         fasteningChose.setLanguage(lang.fasteningType, lang.accept, lang.cancel);
         clearButton.setText(lang.clear);
         showDiagramsButton.setText(lang.showDiagrams);
@@ -719,6 +747,10 @@ public class CalculateYourBeamPM{
         languageMenu2.add(languagePL);
         languageMenu2.add(languageEN);
         menuBar.add(languageMenu);
+        developerAnalysisMenu.setText(lang.developerAnalysis);
+        deflectionAccuracyAnalysisOption.setText(lang.deflectionAnalysis);
+        developerAnalysisMenu.add(deflectionAccuracyAnalysisOption);
+        menuBar.add(developerAnalysisMenu);
         menuBar.setBackgroundColor(new ColorUIResource(200,200,200));
 
         languagePL.addActionListener(e -> {
@@ -729,6 +761,10 @@ public class CalculateYourBeamPM{
         languageEN.addActionListener(e -> {
             lang.setEN();
             setLanguage();
+        });
+
+        deflectionAccuracyAnalysisOption.addActionListener(e -> {
+            swingWorker("DeflectionAnalysis");
         });
     }
 
