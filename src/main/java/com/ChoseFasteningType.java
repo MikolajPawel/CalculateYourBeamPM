@@ -9,7 +9,7 @@ public class ChoseFasteningType{
     private JButton acceptButton;
     private JButton cancelButton;
 
-    public JFrame frame = new JFrame();
+    private JFrame frame = new JFrame();
 
     private int selectedChoice = 0;
 

@@ -46,6 +46,11 @@ public class Language {
     public String developerAnalysis;
     public String alignPositive;
     public String alignNegative;
+    public String deflectionAnalysisManually;
+    public String deflectionAnalysisAutomatically;
+    public String selectRanges;
+    public String beamNumber;
+    public String iterationsNumber;
 
     public Language() {
         setPL();
@@ -103,6 +108,11 @@ public class Language {
         this.alignPositive = "Liczba ekstrmum jest taka sama";
         this.alignNegative = "Liczba ekstremum nie jest taka sama - nie mozna" +
                 " przeprowadzic analizy automatycznie";
+        this.deflectionAnalysisManually = "Dane wprowadzone r\u0119cznie";
+        this.deflectionAnalysisAutomatically = "Dane losowe";
+        this.selectRanges = "WYBIERZ ZAKRESY ANALIZY";
+        this.beamNumber = "Numer analizowanej belki:";
+        this.iterationsNumber = "Ilosc iteracji:";
     }
 
     public void setEN(){
@@ -155,5 +165,10 @@ public class Language {
         this.developerAnalysis = "Developer Analysis";
         this.alignPositive = "Number of extremes are the same";
         this.alignNegative = "Number of extremes are not the same - automatic analysis is not possible";
+        this.deflectionAnalysisManually = "Data parsed manually";
+        this.deflectionAnalysisAutomatically = "Random data";
+        this.selectRanges = "SELECT ANALYSIS RANGES";
+        this.beamNumber = "Analysed beam number:";
+        this.iterationsNumber = "Number of iterations:";
     }
 }

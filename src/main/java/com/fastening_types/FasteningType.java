@@ -907,7 +907,6 @@ public class FasteningType {
         result = yMax;
 
         doDiagrams("y");
-        showDiagrams("y");
 
         return String.valueOf(df.format(result));
     }

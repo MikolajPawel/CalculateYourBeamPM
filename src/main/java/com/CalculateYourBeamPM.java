@@ -182,15 +182,18 @@ public class CalculateYourBeamPM{
     private JMenu fileMenu = new JMenu();
     private JMenuItem savingToPDFMenu = new JMenuItem();
     private JMenu developerAnalysisMenu = new JMenu();
-    private JMenuItem deflectionAccuracyAnalysisOption = new JMenuItem();
+    private JMenu deflectionAccuracyAnalysisOption = new JMenu();
+    private JMenuItem deflectionAccuracyAnalysisManually = new JMenuItem();
+    private JMenuItem deflectionAccuracyAnalysisAutomatically = new JMenuItem();
 
     FasteningType calculate;
     FasteningVisions visionType = new FasteningVisions(0);
     ChoseFasteningType fasteningChose;
+    DeflectionAnalysisAuto deflectionAnalysisAuto;
     Language lang = new Language();
     OptionPanes optionPanes = new OptionPanes();
     SavingPDF savingPDF = new SavingPDF();
-    SavingPDFDeveloper savingPDFDeveloper = new SavingPDFDeveloper();
+    SavingDeveloper savingDeveloper = new SavingDeveloper();
     JFrame mainFrame = new JFrame("Calculate Your Beam PM");
 
     public CalculateYourBeamPM() {
@@ -198,6 +201,8 @@ public class CalculateYourBeamPM{
         optionPanes.setLanguage(lang);
 
         fasteningChose = new ChoseFasteningType(loadImages());
+
+        deflectionAnalysisAuto = new DeflectionAnalysisAuto(optionPanes);
 
         mainResultsScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         mainResultsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -270,6 +275,7 @@ public class CalculateYourBeamPM{
                         }else{
                             result = calculate.deflectionCalculation(getDeflectionValues(), "Numerically");
                         }
+                        calculate.showDiagrams("y");
                         ymaxTextField.setText(result);
                     }
 
@@ -319,22 +325,22 @@ public class CalculateYourBeamPM{
                         ymaxTextField.setText("");
                     }
 
-                    case "DeflectionAnalysis" -> {
+                    case "DeflectionAnalysisManually" -> {
                         progressFrame = new ProgressFrame(lang.progressFasteningMsg,lang.progressTitle);
                         List<List<String>> result;
                         result = calculate.doDeflectionAnalysis();
                         if(result.get(0).get(0).equals("1")){
-                            savingPDFDeveloper.saveToPDF(result, visionType.savingImagePath, optionPanes,
+                            savingDeveloper.saveToPDFManualAnalysis(result, visionType.savingImagePath, optionPanes,
                                     calculate.yChartAna, calculate.yChartNum);
-                            if(!savingPDFDeveloper.savingCheck && !savingPDFDeveloper.cancelCheck){
+                            if(!savingDeveloper.savingCheck && !savingDeveloper.cancelCheck){
                                 optionPanes.showWarning("somethingWentWrong");
-                            }else if(savingPDFDeveloper.savingCheck && !savingPDFDeveloper.cancelCheck){
-                            savingPDFDeveloper.savingCheck = false;
+                            }else if(savingDeveloper.savingCheck && !savingDeveloper.cancelCheck){
+                            savingDeveloper.savingCheck = false;
                             }
                         }else{
                             optionPanes.showWarning("deflectionAnalysisStop");
                         }
-                        savingPDFDeveloper.canProceed = false;
+                        savingDeveloper.canProceed = false;
 
                     }
 
@@ -370,7 +376,7 @@ public class CalculateYourBeamPM{
 
     private void createVisionForTypeOfFastening(){
 
-        for(int i = 0; i<= 14; i++){
+        for(int i=0; i<= 14; i++){
 
             JTextField jc = null;
 
@@ -404,7 +410,7 @@ public class CalculateYourBeamPM{
 
         }
 
-        for(int i = 15; i<=32; i++){
+        for(int i=15; i<=32; i++){
 
             JTextField jc = null;
 
@@ -440,7 +446,7 @@ public class CalculateYourBeamPM{
 
         mgMaxTextField.setText("");
 
-        for(int i = 33; i<=47; i++){
+        for(int i=33; i<=47; i++){
 
             JCheckBox jc = null;
 
@@ -532,7 +538,7 @@ public class CalculateYourBeamPM{
     private double[] getValues(){
         double[] values = new double[15];
 
-        for(int i = 0; i<= 14; i++){
+        for(int i=0; i<= 14; i++){
 
             JTextField jc = null;
             String value;
@@ -625,10 +631,9 @@ public class CalculateYourBeamPM{
         }
         return value;
     }
-
     private void showResults(String[] results){
         int k = 0;
-        for(int i = 15; i<=32; i++){
+        for(int i=15; i<=32; i++){
 
             JTextField jc = null;
 
@@ -663,7 +668,7 @@ public class CalculateYourBeamPM{
 
     private void restrainInvalidInputInTextFields(){
 
-        for(int i = 0; i<= 9; i++){
+        for(int i=0; i<= 9; i++){
 
             JTextField jc = null;
 
@@ -683,7 +688,7 @@ public class CalculateYourBeamPM{
             jc.addKeyListener(new InputTextField(jc, "WithNegativeNumbers", null));
         }
 
-        for(int i = 0; i<= 7; i++){
+        for(int i=0; i<= 7; i++){
 
             JTextField jc = null;
 
@@ -720,8 +725,10 @@ public class CalculateYourBeamPM{
         resultsCrossSectionLabel.setText(lang.resultsCrossSection);
         calculateCrossSectionButton.setText(lang.calculateCrossSection);
         savingPDF.setSavingLanguage(lang.data, lang.results, optionPanes);
-        savingPDFDeveloper.setSavingLanguage(optionPanes, lang.alignPositive, lang.alignNegative);
+        savingDeveloper.setSavingLanguage(optionPanes, lang.alignPositive, lang.alignNegative);
         fasteningChose.setLanguage(lang.fasteningType, lang.accept, lang.cancel);
+        deflectionAnalysisAuto.setLanguage(lang.selectRanges,lang.accept, lang.cancel,
+                lang.beamNumber, lang.iterationsNumber, lang.progressFasteningMsg, lang.progressTitle);
         clearButton.setText(lang.clear);
         showDiagramsButton.setText(lang.showDiagrams);
         crossSectionDataLabel.setText(lang.crossSectionData);
@@ -750,6 +757,10 @@ public class CalculateYourBeamPM{
         developerAnalysisMenu.setText(lang.developerAnalysis);
         deflectionAccuracyAnalysisOption.setText(lang.deflectionAnalysis);
         developerAnalysisMenu.add(deflectionAccuracyAnalysisOption);
+        deflectionAccuracyAnalysisManually.setText(lang.deflectionAnalysisManually);
+        deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisManually);
+        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysisAutomatically);
+        deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisAutomatically);
         menuBar.add(developerAnalysisMenu);
         menuBar.setBackgroundColor(new ColorUIResource(200,200,200));
 
@@ -763,13 +774,18 @@ public class CalculateYourBeamPM{
             setLanguage();
         });
 
-        deflectionAccuracyAnalysisOption.addActionListener(e -> {
-            swingWorker("DeflectionAnalysis");
+        deflectionAccuracyAnalysisManually.addActionListener(e -> {
+            swingWorker("DeflectionAnalysisManually");
+        });
+
+        deflectionAccuracyAnalysisAutomatically.addActionListener(e ->{
+            deflectionAnalysisAuto.showFrame();
+            mainFrame.setEnabled(false);
         });
     }
 
     private boolean checkIfCanSave() {
-        for (int i = 15; i <= 32; i++) {
+        for (int i=15; i <= 32; i++) {
 
             JTextField jc = null;
 
