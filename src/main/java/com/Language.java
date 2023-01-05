@@ -51,6 +51,7 @@ public class Language {
     public String selectRanges;
     public String beamNumber;
     public String iterationsNumber;
+    public String analyseTime;
 
     public Language() {
         setPL();
@@ -113,6 +114,7 @@ public class Language {
         this.selectRanges = "WYBIERZ ZAKRESY ANALIZY";
         this.beamNumber = "Numer analizowanej belki:";
         this.iterationsNumber = "Ilosc iteracji:";
+        this.analyseTime = "Czas oblicze\u0144 numerycznych";
     }
 
     public void setEN(){
@@ -170,5 +172,6 @@ public class Language {
         this.selectRanges = "SELECT ANALYSIS RANGES";
         this.beamNumber = "Analysed beam number:";
         this.iterationsNumber = "Number of iterations:";
+        this.analyseTime = "Numerical calculations time";
     }
 }

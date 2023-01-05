@@ -8,14 +8,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DeflectionAnalysisAuto {
+public class DeflectionTimeAnalysis {
 
     private JPanel panel;
     private JButton acceptButton;
     private JButton cancelButton;
     private JPanel dataPanel;
-    private JLabel beamNumberLabel;
-    private JComboBox beamNumberComboBox;
     private JTextField fMinTextField;
     private JLabel fLabel;
     private JLabel qLabel;
@@ -41,11 +39,11 @@ public class DeflectionAnalysisAuto {
     private String progressFasteningMsg;
     private String progressTitle;
 
-    public DeflectionAnalysisAuto(OptionPanes optionPanes){
+    public DeflectionTimeAnalysis(OptionPanes optionPanes){
 
         restrainInvalidInputInTextFields();
 
-        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,50,1));
+        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,200,1));
         ((JSpinner.DefaultEditor) iterationsSpinner.getEditor()).getTextField().setEditable(false);
 
         acceptButton.addActionListener(e ->{
@@ -81,32 +79,44 @@ public class DeflectionAnalysisAuto {
             protected Void doInBackground(){
                 progressFrame = new ProgressFrame(progressFasteningMsg,progressTitle);
 
-                FasteningVisions visionType = new FasteningVisions(selectedBeam(
-                        beamNumberComboBox.getSelectedIndex()));
-                FasteningType calculate;
-                List<List<List<String>>> allResults = new ArrayList<>();
+                List<List<String>> wholeData = new ArrayList<>();
 
-                for(int i=0; i<(int)iterationsSpinner.getValue(); i++){
+                for(int k=0; k<=7; k++){
 
-                    double[] values = setRandomNumNormalCalc(visionType.vis);
-                    calculate = LoadFasteningType.calculate(visionType.type, values,optionPanes);
-                    calculate.calculations();
+                    FasteningVisions visionType = new FasteningVisions(selectedBeam(k));
+                    FasteningType calculate;
 
-                    String[] deflectionValues = setRandomNumDeflectionCalc();
+                    for(int i=0; i<(int)iterationsSpinner.getValue(); i++){
 
-                    calculate.deflectionCalculation(deflectionValues, "Analytically");
-                    calculate.deflectionCalculation(deflectionValues, "Numerically");
+                        List<String> data = new ArrayList<>();
 
-                    List<List<String>> result;
-                    result = calculate.doDeflectionAnalysis();
-                    allResults.add(result);
+                        double[] values = setRandomNumNormalCalc(visionType.vis);
+                        calculate = LoadFasteningType.calculate(visionType.type, values, optionPanes);
+                        calculate.calculations();
 
+                        String[] deflectionValues = setRandomNumDeflectionCalc();
+
+                        long timeBefore = System.currentTimeMillis();
+                        calculate.deflectionCalculation(deflectionValues, "Numerically");
+                        long timeAfter = System.currentTimeMillis();
+
+                        long time = (timeAfter - timeBefore);
+
+                        System.out.println(time);
+
+                        data.add(String.valueOf(calculate.mgMax));
+                        data.add(String.valueOf(calculate.ei));
+                        data.add(String.valueOf(time));
+
+                        wholeData.add(data);
+
+                    }
                 }
 
                 SavingDeveloper save = new SavingDeveloper();
                 save.setSavingLanguage(optionPanes, "null", "null");
 
-                save.saveToXLSXDeflectionAccuracyAnalysis(optionPanes, allResults);
+                save.saveToXLSXDeflectionTimeAnalysis(optionPanes, wholeData);
 
                 if(!save.savingCheck && !save.cancelCheck){
                     optionPanes.showWarning("somethingWentWrong");
@@ -133,7 +143,6 @@ public class DeflectionAnalysisAuto {
         frame.setTitle(frameTxt);
         acceptButton.setText(acceptTxt);
         cancelButton.setText(cancelTxt);
-        beamNumberLabel.setText(beamNumber);
         iterationsLabel.setText(iterationsNumber);
         this.progressFasteningMsg = progressFasteningMsg;
         this.progressTitle = progressTitle;

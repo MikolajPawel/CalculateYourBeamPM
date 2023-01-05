@@ -420,6 +420,115 @@ public class SavingDeveloper {
 
     }
 
+    public void saveToXLSXDeflectionTimeAnalysis(OptionPanes optionPanes, List<List<String>> wholeTimeData){
+
+        this.optionPanes = optionPanes;
+
+        try {
+
+            uiManager();
+
+            File savingFile = null;
+
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter;
+            String extension;
+
+            filter = new FileNameExtensionFilter("Excel file","xlsx");
+            extension = ".xlsx";
+
+            fileChooser.setAcceptAllFileFilterUsed(false);
+            fileChooser.addChoosableFileFilter(filter);
+
+            cancelCheck = false;
+
+            while(!canProceed){
+                uiManager();
+                if(fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION){
+                    if(!fileChooser.getSelectedFile().getAbsolutePath().endsWith(extension)){
+                        savingFile = new File(fileChooser.getSelectedFile() + extension);
+                    }
+                    else {
+                        savingFile = fileChooser.getSelectedFile();
+                    }
+
+                    if(savingFile.exists()){
+                        if(optionPanes.askYesNoUser("overwriteQuestion") == 0){
+                            canProceed = true;
+                            uiManager();
+                        }else{canProceed = false;}
+                    }else{
+                        canProceed = true;
+                        uiManager();
+                    }
+
+                }else {
+                    canProceed = true;
+                    cancelCheck = true;
+                }
+            }
+
+            if (!cancelCheck) {
+
+                XSSFWorkbook workbook = new XSSFWorkbook();
+
+                XSSFSheet spreadsheet = workbook.createSheet(" Deflection Time Analysis ");
+
+                XSSFRow row;
+
+                int iteration = wholeTimeData.size();
+
+                Map<String, Object[]> timeData = new TreeMap<>();
+
+                timeData.put("1", new Object[]{"Mg max [Nm]", "EIz[Nm^2]", "Time[ms]"});
+
+                int rowCount = 2;
+
+                for (int i = 0; i < iteration; i++) {
+
+                    Object[] obj;
+                    List<String> tempList = new ArrayList<>();
+
+                    tempList.add(wholeTimeData.get(i).get(0));
+                    tempList.add(wholeTimeData.get(i).get(1));
+                    tempList.add(wholeTimeData.get(i).get(2));
+
+                    obj = tempList.toArray();
+
+                    timeData.put(String.valueOf(rowCount), obj);
+                    rowCount++;
+
+                }
+
+                for (int i = 1; i < rowCount; i++) {
+
+                    row = spreadsheet.createRow(i);
+                    Object[] obj = timeData.get(String.valueOf(i));
+
+                    for (int k = 0; k < 3; k++) {
+                        Cell cell = row.createCell(k);
+                        cell.setCellValue((String) obj[k]);
+                    }
+                }
+
+                FileOutputStream out = new FileOutputStream(savingFile.getCanonicalFile());
+
+                workbook.write(out);
+                out.close();
+
+            }
+            savingCheck = true;
+            optionPanes.showSavingSuccess(savingFile.getAbsolutePath());
+
+
+        }catch (Exception ex) {
+            savingCheck = false;
+            cancelCheck = false;
+
+        }
+
+    }
+
     void uiManager(){
         UIManager.put("Panel.background", new ColorUIResource(250,250,250));
         UIManager.put("OptionPane.background", new ColorUIResource(250,250,250));

@@ -781,7 +781,7 @@ public class FasteningType {
 
     public double iZ;
     public double youngModulus;
-    double ei;
+    public double ei;
     public double yMax;
 
     double[] yAB;
@@ -942,6 +942,7 @@ public class FasteningType {
     }
 
     public void deflectionNumericalCalculation(){
+
         int numberOfSections = 0;
         if(this.bc > 0){numberOfSections++;}
         if(this.cd > 0){numberOfSections++;}

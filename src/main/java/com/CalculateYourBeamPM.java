@@ -185,11 +185,13 @@ public class CalculateYourBeamPM{
     private JMenu deflectionAccuracyAnalysisOption = new JMenu();
     private JMenuItem deflectionAccuracyAnalysisManually = new JMenuItem();
     private JMenuItem deflectionAccuracyAnalysisAutomatically = new JMenuItem();
+    private JMenuItem deflectionTimeAnalysisOption = new JMenuItem();
 
     FasteningType calculate;
     FasteningVisions visionType = new FasteningVisions(0);
     ChoseFasteningType fasteningChose;
     DeflectionAnalysisAuto deflectionAnalysisAuto;
+    DeflectionTimeAnalysis deflectionTimeAnalysis;
     Language lang = new Language();
     OptionPanes optionPanes = new OptionPanes();
     SavingPDF savingPDF = new SavingPDF();
@@ -203,6 +205,7 @@ public class CalculateYourBeamPM{
         fasteningChose = new ChoseFasteningType(loadImages());
 
         deflectionAnalysisAuto = new DeflectionAnalysisAuto(optionPanes);
+        deflectionTimeAnalysis = new DeflectionTimeAnalysis(optionPanes);
 
         mainResultsScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         mainResultsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -275,7 +278,7 @@ public class CalculateYourBeamPM{
                         }else{
                             result = calculate.deflectionCalculation(getDeflectionValues(), "Numerically");
                         }
-                        calculate.showDiagrams("y");
+                        if(!result.equals("")){calculate.showDiagrams("y");}
                         ymaxTextField.setText(result);
                     }
 
@@ -712,7 +715,6 @@ public class CalculateYourBeamPM{
 
     private void setLanguage(){
         optionPanes.setLanguage(lang);
-
         fileMenu.setText(lang.file);
         savingToPDFMenu.setText(lang.saving);
         developerAnalysisMenu.setText(lang.developerAnalysis);
@@ -729,6 +731,8 @@ public class CalculateYourBeamPM{
         fasteningChose.setLanguage(lang.fasteningType, lang.accept, lang.cancel);
         deflectionAnalysisAuto.setLanguage(lang.selectRanges,lang.accept, lang.cancel,
                 lang.beamNumber, lang.iterationsNumber, lang.progressFasteningMsg, lang.progressTitle);
+        deflectionTimeAnalysis.setLanguage(lang.selectRanges,lang.accept, lang.cancel,
+                lang.beamNumber, lang.iterationsNumber, lang.progressFasteningMsg, lang.progressTitle);
         clearButton.setText(lang.clear);
         showDiagramsButton.setText(lang.showDiagrams);
         crossSectionDataLabel.setText(lang.crossSectionData);
@@ -739,6 +743,9 @@ public class CalculateYourBeamPM{
         numericalCalculationCheck.setText(lang.numericalRadioButton);
         calculate.setLanguage(lang.mgDiagramTitle, lang.tDiagramTitle, lang.yDiagramTitle,
                 lang.yDiagramTitleNumerical, optionPanes);
+        deflectionAccuracyAnalysisManually.setText(lang.deflectionAnalysisManually);
+        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysisAutomatically);
+        deflectionTimeAnalysisOption.setText(lang.analyseTime);
     }
 
     private void setMenuBar(){
@@ -761,6 +768,8 @@ public class CalculateYourBeamPM{
         deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisManually);
         deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysisAutomatically);
         deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisAutomatically);
+        deflectionTimeAnalysisOption.setText(lang.analyseTime);
+        developerAnalysisMenu.add(deflectionTimeAnalysisOption);
         menuBar.add(developerAnalysisMenu);
         menuBar.setBackgroundColor(new ColorUIResource(200,200,200));
 
@@ -782,6 +791,12 @@ public class CalculateYourBeamPM{
             deflectionAnalysisAuto.showFrame();
             mainFrame.setEnabled(false);
         });
+
+        deflectionTimeAnalysisOption.addActionListener(e ->{
+            deflectionTimeAnalysis.showFrame();
+            mainFrame.setEnabled(false);
+        });
+
     }
 
     private boolean checkIfCanSave() {
