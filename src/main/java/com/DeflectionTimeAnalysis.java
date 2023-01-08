@@ -43,7 +43,7 @@ public class DeflectionTimeAnalysis {
 
         restrainInvalidInputInTextFields();
 
-        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,200,1));
+        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,500,1));
         ((JSpinner.DefaultEditor) iterationsSpinner.getEditor()).getTextField().setEditable(false);
 
         acceptButton.addActionListener(e ->{
@@ -81,6 +81,8 @@ public class DeflectionTimeAnalysis {
 
                 List<List<String>> wholeData = new ArrayList<>();
 
+                int testNumber = 1;
+
                 for(int k=0; k<=7; k++){
 
                     FasteningVisions visionType = new FasteningVisions(selectedBeam(k));
@@ -96,19 +98,30 @@ public class DeflectionTimeAnalysis {
 
                         String[] deflectionValues = setRandomNumDeflectionCalc();
 
-                        long timeBefore = System.currentTimeMillis();
+                        long timeBefore;
+                        long timeAfter;
+
+                        timeBefore = System.currentTimeMillis();
+                        calculate.deflectionCalculation(deflectionValues, "Analytically");
+                        timeAfter = System.currentTimeMillis();
+
+                        long timeAnalytical = (timeAfter - timeBefore);
+
+                        timeBefore = System.currentTimeMillis();
                         calculate.deflectionCalculation(deflectionValues, "Numerically");
-                        long timeAfter = System.currentTimeMillis();
+                        timeAfter = System.currentTimeMillis();
 
-                        long time = (timeAfter - timeBefore);
+                        long timeNumerical = (timeAfter - timeBefore);
 
-                        System.out.println(time);
-
+                        data.add(String.valueOf(testNumber));
                         data.add(String.valueOf(calculate.mgMax));
                         data.add(String.valueOf(calculate.ei));
-                        data.add(String.valueOf(time));
+                        data.add(String.valueOf(timeAnalytical));
+                        data.add(String.valueOf(timeNumerical));
 
                         wholeData.add(data);
+
+                        testNumber++;
 
                     }
                 }

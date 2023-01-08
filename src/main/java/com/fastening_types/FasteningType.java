@@ -1,7 +1,6 @@
 package com.fastening_types;
 
 import com.OptionPanes;
-import org.eclipse.swt.internal.C;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -978,12 +977,7 @@ public class FasteningType {
         mg = assignMgToNumerical(numberOfSections);
         deltaX = assignDeltaX(numberOfSections);
 
-        initYDerivative = 1;
-
-
-        y = deflectionNumericalCalculator(nodesYNumerical, initYDerivative, deltaX, mg, startingPoint);
-        error = checkErrorY(y, isYZero);
-        initYDerivative = (error/10000);
+        initYDerivative = 0.1;
         deltaYDerivative = (initYDerivative/10000);
 
 

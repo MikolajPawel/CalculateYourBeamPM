@@ -251,8 +251,8 @@ public class SavingDeveloper {
 
     }
 
-    public void saveToXLSXDeflectionAccuracyAnalysis(OptionPanes optionPanes,
-                                                     List<List<List<String>>> resultAutomatic){
+    public void saveToXLSXDeflectionAccuracyAnalysis(OptionPanes optionPanes, List<List<List<List<String>>>> results,
+                                                     int beamNumber){
 
         this.optionPanes = optionPanes;
 
@@ -304,103 +304,115 @@ public class SavingDeveloper {
 
                 XSSFWorkbook workbook = new XSSFWorkbook();
 
-                XSSFSheet spreadsheet = workbook.createSheet(" Deflection Analysis ");
+                int sheetsNumber = 1;
+                if(beamNumber == 0){sheetsNumber = 8;}
 
-                XSSFRow row;
+                for(int p=0; p<sheetsNumber; p++){
 
-                int iteration = resultAutomatic.size();
+                    List<List<List<String>>> resultAutomatic = results.get(p);
 
-                Map<String, Object[]> peaksData = new TreeMap<>();
+                    int beamNo;
+                    if(beamNumber == 0){beamNo = selectedBeam(p);}
+                    else{beamNo = beamNumber;}
 
-                peaksData.put("1", new Object[]{"Iteration", "Xa[m]", "Ya[m]", "Xn[m]", "Yn[m]"});
+                    XSSFSheet spreadsheet = workbook.createSheet(" Beam No." + beamNo);
 
-                int rowCount = 2;
+                    XSSFRow row;
 
-                for (int i = 0; i < iteration; i++) {
+                    int iteration = resultAutomatic.size();
 
-                    Object[] obj;
+                    Map<String, Object[]> peaksData = new TreeMap<>();
 
-                    if (resultAutomatic.get(i).get(0).get(1).equals("1")) {
+                    peaksData.put("1", new Object[]{"Iteration", "Xa[m]", "Ya[m]", "Xn[m]", "Yn[m]"});
 
-                        for (int k = 0; k < Integer.parseInt(resultAutomatic.get(i).get(0).get(2)); k++) {
+                    int rowCount = 2;
 
-                            List<String> tempList = new ArrayList<>();
-                            if (k == 0) {
-                                tempList.add(String.valueOf(i + 1));
-                            } else {
-                                tempList.add("");
-                            }
-                            tempList.add(resultAutomatic.get(i).get(k + 1).get(0));
-                            tempList.add(resultAutomatic.get(i).get(k + 1).get(1));
-                            tempList.add(resultAutomatic.get(i).get(k + 1).get(2));
-                            tempList.add(resultAutomatic.get(i).get(k + 1).get(3));
+                    for (int i = 0; i < iteration; i++) {
 
-                            obj = tempList.toArray();
+                        Object[] obj;
 
-                            peaksData.put(String.valueOf(rowCount), obj);
-                            rowCount++;
+                        if (resultAutomatic.get(i).get(0).get(1).equals("1")) {
 
-                        }
+                            for (int k = 0; k < Integer.parseInt(resultAutomatic.get(i).get(0).get(2)); k++) {
 
-                    } else {
-
-                        int secondIteration;
-                        if (Integer.parseInt(resultAutomatic.get(i).get(0).get(2))
-                                > Integer.parseInt(resultAutomatic.get(i).get(0).get(3))) {
-
-                            secondIteration = Integer.parseInt(resultAutomatic.get(i).get(0).get(2));
-
-                        } else {
-                            secondIteration = Integer.parseInt(resultAutomatic.get(i).get(0).get(3));
-                            ;
-                        }
-
-                        for (int k = 0; k < secondIteration; k++) {
-
-                            List<String> tempList = new ArrayList<>();
-                            if (k == 0) {
-                                tempList.add(String.valueOf(i + 1));
-                            } else {
-                                tempList.add("");
-                            }
-
-                            if (Integer.parseInt(resultAutomatic.get(i).get(0).get(2)) >= k + 1) {
+                                List<String> tempList = new ArrayList<>();
+                                if (k == 0) {
+                                    tempList.add(String.valueOf(i + 1));
+                                } else {
+                                    tempList.add("");
+                                }
                                 tempList.add(resultAutomatic.get(i).get(k + 1).get(0));
                                 tempList.add(resultAutomatic.get(i).get(k + 1).get(1));
-                            } else {
-                                tempList.add("");
-                                tempList.add("");
+                                tempList.add(resultAutomatic.get(i).get(k + 1).get(2));
+                                tempList.add(resultAutomatic.get(i).get(k + 1).get(3));
+
+                                obj = tempList.toArray();
+
+                                peaksData.put(String.valueOf(rowCount), obj);
+                                rowCount++;
+
                             }
 
-                            if (Integer.parseInt(resultAutomatic.get(i).get(0).get(3)) >= k + 1) {
-                                tempList.add(resultAutomatic.get(i).
-                                        get(k + 1 + Integer.parseInt(resultAutomatic.get(i).get(0).get(2))).get(0));
-                                tempList.add(resultAutomatic.get(i).
-                                        get(k + 1 + Integer.parseInt(resultAutomatic.get(i).get(0).get(2))).get(1));
+                        } else {
+
+                            int secondIteration;
+                            if (Integer.parseInt(resultAutomatic.get(i).get(0).get(2))
+                                    > Integer.parseInt(resultAutomatic.get(i).get(0).get(3))) {
+
+                                secondIteration = Integer.parseInt(resultAutomatic.get(i).get(0).get(2));
+
                             } else {
-                                tempList.add("");
-                                tempList.add("");
+                                secondIteration = Integer.parseInt(resultAutomatic.get(i).get(0).get(3));
                             }
 
-                            obj = tempList.toArray();
+                            for (int k = 0; k < secondIteration; k++) {
 
-                            peaksData.put(String.valueOf(rowCount), obj);
-                            rowCount++;
+                                List<String> tempList = new ArrayList<>();
+                                if (k == 0) {
+                                    tempList.add(String.valueOf(i + 1));
+                                } else {
+                                    tempList.add("");
+                                }
 
+                                if (Integer.parseInt(resultAutomatic.get(i).get(0).get(2)) >= k + 1) {
+                                    tempList.add(resultAutomatic.get(i).get(k + 1).get(0));
+                                    tempList.add(resultAutomatic.get(i).get(k + 1).get(1));
+                                } else {
+                                    tempList.add("");
+                                    tempList.add("");
+                                }
+
+                                if (Integer.parseInt(resultAutomatic.get(i).get(0).get(3)) >= k + 1) {
+                                    tempList.add(resultAutomatic.get(i).
+                                            get(k + 1 + Integer.parseInt(resultAutomatic.get(i).get(0).get(2))).get(0));
+                                    tempList.add(resultAutomatic.get(i).
+                                            get(k + 1 + Integer.parseInt(resultAutomatic.get(i).get(0).get(2))).get(1));
+                                } else {
+                                    tempList.add("");
+                                    tempList.add("");
+                                }
+
+                                obj = tempList.toArray();
+
+                                peaksData.put(String.valueOf(rowCount), obj);
+                                rowCount++;
+
+                            }
+                        }
+
+                    }
+
+                    for (int i = 1; i < rowCount; i++) {
+
+                        row = spreadsheet.createRow(i);
+                        Object[] obj = peaksData.get(String.valueOf(i));
+
+                        for (int k = 0; k < 5; k++) {
+                            Cell cell = row.createCell(k);
+                            cell.setCellValue((String) obj[k]);
                         }
                     }
 
-                }
-
-                for (int i = 1; i < rowCount; i++) {
-
-                    row = spreadsheet.createRow(i);
-                    Object[] obj = peaksData.get(String.valueOf(i));
-
-                    for (int k = 0; k < 5; k++) {
-                        Cell cell = row.createCell(k);
-                        cell.setCellValue((String) obj[k]);
-                    }
                 }
 
                 FileOutputStream out = new FileOutputStream(savingFile.getCanonicalFile());
@@ -414,6 +426,7 @@ public class SavingDeveloper {
 
 
         }catch (Exception ex) {
+            ex.printStackTrace();
             savingCheck = false;
             cancelCheck = false;
         }
@@ -480,7 +493,8 @@ public class SavingDeveloper {
 
                 Map<String, Object[]> timeData = new TreeMap<>();
 
-                timeData.put("1", new Object[]{"Mg max [Nm]", "EIz[Nm^2]", "Time[ms]"});
+                timeData.put("1", new Object[]{"Test Id","Mg max [Nm]", "EIz[Nm^2]",
+                        "Time Analytical [ms]", "Time Numerical [ms]" });
 
                 int rowCount = 2;
 
@@ -492,6 +506,8 @@ public class SavingDeveloper {
                     tempList.add(wholeTimeData.get(i).get(0));
                     tempList.add(wholeTimeData.get(i).get(1));
                     tempList.add(wholeTimeData.get(i).get(2));
+                    tempList.add(wholeTimeData.get(i).get(3));
+                    tempList.add(wholeTimeData.get(i).get(4));
 
                     obj = tempList.toArray();
 
@@ -505,7 +521,7 @@ public class SavingDeveloper {
                     row = spreadsheet.createRow(i);
                     Object[] obj = timeData.get(String.valueOf(i));
 
-                    for (int k = 0; k < 3; k++) {
+                    for (int k = 0; k < 5; k++) {
                         Cell cell = row.createCell(k);
                         cell.setCellValue((String) obj[k]);
                     }
@@ -527,6 +543,21 @@ public class SavingDeveloper {
 
         }
 
+    }
+
+    private int selectedBeam(int comboBoxInt){
+        int selectedIndex = 0;
+        switch (comboBoxInt){
+            case 0 -> selectedIndex = 1;
+            case 1 -> selectedIndex = 3;
+            case 2 -> selectedIndex = 4;
+            case 3 -> selectedIndex = 5;
+            case 4 -> selectedIndex = 7;
+            case 5 -> selectedIndex = 8;
+            case 6 -> selectedIndex = 9;
+            case 7 -> selectedIndex = 10;
+        }
+        return selectedIndex;
     }
 
     void uiManager(){

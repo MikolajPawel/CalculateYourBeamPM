@@ -45,7 +45,7 @@ public class DeflectionAnalysisAuto {
 
         restrainInvalidInputInTextFields();
 
-        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,50,1));
+        iterationsSpinner.setModel(new SpinnerNumberModel(1,1,500,1));
         ((JSpinner.DefaultEditor) iterationsSpinner.getEditor()).getTextField().setEditable(false);
 
         acceptButton.addActionListener(e ->{
@@ -79,34 +79,74 @@ public class DeflectionAnalysisAuto {
             }
             @Override
             protected Void doInBackground(){
-                progressFrame = new ProgressFrame(progressFasteningMsg,progressTitle);
+                progressFrame = new ProgressFrame(progressFasteningMsg, progressTitle);
 
-                FasteningVisions visionType = new FasteningVisions(selectedBeam(
-                        beamNumberComboBox.getSelectedIndex()));
-                FasteningType calculate;
-                List<List<List<String>>> allResults = new ArrayList<>();
+                List<List<List<List<String>>>> allResults = new ArrayList<>();
 
-                for(int i=0; i<(int)iterationsSpinner.getValue(); i++){
+                if(selectedBeam(beamNumberComboBox.getSelectedIndex()) !=0){
 
-                    double[] values = setRandomNumNormalCalc(visionType.vis);
-                    calculate = LoadFasteningType.calculate(visionType.type, values,optionPanes);
-                    calculate.calculations();
+                    List<List<List<String>>> results = new ArrayList<>();
 
-                    String[] deflectionValues = setRandomNumDeflectionCalc();
+                    FasteningVisions visionType = new FasteningVisions(selectedBeam(
+                            beamNumberComboBox.getSelectedIndex()));
+                    FasteningType calculate;
 
-                    calculate.deflectionCalculation(deflectionValues, "Analytically");
-                    calculate.deflectionCalculation(deflectionValues, "Numerically");
+                    for(int i=0; i<(int)iterationsSpinner.getValue(); i++){
 
-                    List<List<String>> result;
-                    result = calculate.doDeflectionAnalysis();
-                    allResults.add(result);
+                        double[] values = setRandomNumNormalCalc(visionType.vis);
+                        calculate = LoadFasteningType.calculate(visionType.type, values, optionPanes);
+                        calculate.calculations();
+
+                        String[] deflectionValues = setRandomNumDeflectionCalc();
+
+                        calculate.deflectionCalculation(deflectionValues, "Analytically");
+                        calculate.deflectionCalculation(deflectionValues, "Numerically");
+
+                        List<List<String>> result;
+                        result = calculate.doDeflectionAnalysis();
+                        results.add(result);
+
+                    }
+
+                    allResults.add(results);
+
+                }else{
+
+                    for(int i=0; i<8; i++){
+
+                        FasteningVisions visionType = new FasteningVisions(selectedBeam(i));
+                        FasteningType calculate;
+
+                        List<List<List<String>>> results = new ArrayList<>();
+
+                        for(int k=0; k<(int)iterationsSpinner.getValue(); k++){
+
+                            double[] values = setRandomNumNormalCalc(visionType.vis);
+                            calculate = LoadFasteningType.calculate(visionType.type, values, optionPanes);
+                            calculate.calculations();
+
+                            String[] deflectionValues = setRandomNumDeflectionCalc();
+
+                            calculate.deflectionCalculation(deflectionValues, "Analytically");
+                            calculate.deflectionCalculation(deflectionValues, "Numerically");
+
+                            List<List<String>> result;
+                            result = calculate.doDeflectionAnalysis();
+                            results.add(result);
+
+                        }
+
+                        allResults.add(results);
+
+                    }
 
                 }
 
                 SavingDeveloper save = new SavingDeveloper();
                 save.setSavingLanguage(optionPanes, "null", "null");
 
-                save.saveToXLSXDeflectionAccuracyAnalysis(optionPanes, allResults);
+                save.saveToXLSXDeflectionAccuracyAnalysis(optionPanes, allResults,
+                        selectedBeam(beamNumberComboBox.getSelectedIndex()));
 
                 if(!save.savingCheck && !save.cancelCheck){
                     optionPanes.showWarning("somethingWentWrong");

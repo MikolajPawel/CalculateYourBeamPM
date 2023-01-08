@@ -272,14 +272,18 @@ public class CalculateYourBeamPM{
                     case "Deflection" -> {
                         progressFrame = new ProgressFrame(lang.progressFasteningMsg,lang.progressTitle);
 
+                        mainFrame.setVisible(false);
+
                         String result;
                         if(!numericalCalculationCheck.isSelected()){
                             result = calculate.deflectionCalculation(getDeflectionValues(), "Analytically");
                         }else{
                             result = calculate.deflectionCalculation(getDeflectionValues(), "Numerically");
                         }
+                        mainFrame.setVisible(true);
                         if(!result.equals("")){calculate.showDiagrams("y");}
                         ymaxTextField.setText(result);
+
                     }
 
                     case "CrossSection" -> {
@@ -330,6 +334,7 @@ public class CalculateYourBeamPM{
 
                     case "DeflectionAnalysisManually" -> {
                         progressFrame = new ProgressFrame(lang.progressFasteningMsg,lang.progressTitle);
+
                         List<List<String>> result;
                         result = calculate.doDeflectionAnalysis();
                         if(result.get(0).get(0).equals("1")){
@@ -790,11 +795,13 @@ public class CalculateYourBeamPM{
         deflectionAccuracyAnalysisAutomatically.addActionListener(e ->{
             deflectionAnalysisAuto.showFrame();
             mainFrame.setEnabled(false);
+            mainFrame.setVisible(false);
         });
 
         deflectionTimeAnalysisOption.addActionListener(e ->{
             deflectionTimeAnalysis.showFrame();
             mainFrame.setEnabled(false);
+            mainFrame.setVisible(false);
         });
 
     }

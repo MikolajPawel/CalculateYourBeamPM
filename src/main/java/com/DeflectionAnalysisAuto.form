@@ -100,9 +100,9 @@
           <component id="b9058" class="javax.swing.JComboBox" binding="beamNumberComboBox">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                <minimum-size width="70" height="30"/>
-                <preferred-size width="70" height="30"/>
-                <maximum-size width="70" height="30"/>
+                <minimum-size width="85" height="30"/>
+                <preferred-size width="85" height="30"/>
+                <maximum-size width="85" height="30"/>
               </grid>
             </constraints>
             <properties>
@@ -117,6 +117,7 @@
                 <item value="8"/>
                 <item value="9"/>
                 <item value="10"/>
+                <item value="1,...,10"/>
               </model>
             </properties>
           </component>

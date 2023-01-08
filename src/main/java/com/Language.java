@@ -114,7 +114,7 @@ public class Language {
         this.selectRanges = "WYBIERZ ZAKRESY ANALIZY";
         this.beamNumber = "Numer analizowanej belki:";
         this.iterationsNumber = "Ilosc iteracji:";
-        this.analyseTime = "Czas oblicze\u0144 numerycznych";
+        this.analyseTime = "Czas oblicze\u0144 linii ugi\u0119cia belki";
     }
 
     public void setEN(){
@@ -172,6 +172,6 @@ public class Language {
         this.selectRanges = "SELECT ANALYSIS RANGES";
         this.beamNumber = "Analysed beam number:";
         this.iterationsNumber = "Number of iterations:";
-        this.analyseTime = "Numerical calculations time";
+        this.analyseTime = "Beam deflection calculation time";
     }
 }
