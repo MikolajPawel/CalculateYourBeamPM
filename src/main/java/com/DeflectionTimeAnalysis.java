@@ -4,7 +4,6 @@ import com.fastening_types.FasteningType;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -262,7 +261,7 @@ public class DeflectionTimeAnalysis {
                 case 2 -> jc = qMinTextField;
                 case 3 -> jc = qMaxTextField;
             }
-            jc.addKeyListener(new InputTextField(jc, "WithNegativeNumbers", null));
+            jc.addKeyListener(new InputTextField(jc, InputTextField.WITH_NEGATIVE_NUMBERS, null));
         }
 
         for(int i=0; i<=5; i++){
@@ -277,7 +276,7 @@ public class DeflectionTimeAnalysis {
                 case 4 -> jc = dimensionMinTextField;
                 case 5 -> jc = dimensionMaxTextField;
             }
-            jc.addKeyListener(new InputTextField(jc, "WithoutNegativeNumbers", null));
+            jc.addKeyListener(new InputTextField(jc, InputTextField.WITHOUT_NEGATIVE_NUMBERS, null));
         }
 
     }

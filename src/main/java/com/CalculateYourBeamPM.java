@@ -4,7 +4,6 @@ import com.fastening_types.FasteningType;
 
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
-import java.util.List;
 
 
 public class CalculateYourBeamPM{
@@ -667,7 +666,7 @@ public class CalculateYourBeamPM{
                 case 9 -> jc = q5TextField;
 
             }
-            jc.addKeyListener(new InputTextField(jc, "WithNegativeNumbers", null));
+            jc.addKeyListener(new InputTextField(jc, InputTextField.WITH_NEGATIVE_NUMBERS, null));
         }
 
         for(int i=0; i<= 7; i++){
@@ -684,11 +683,11 @@ public class CalculateYourBeamPM{
                 case 6 -> jc = emaxTextField;
                 case 7 -> jc = youngModulusTextField;
             }
-            jc.addKeyListener(new InputTextField(jc, "WithoutNegativeNumbers", null));
+            jc.addKeyListener(new InputTextField(jc, InputTextField.WITHOUT_NEGATIVE_NUMBERS, null));
         }
 
-        iTextField.addKeyListener(new InputTextField(iTextField, "Inertia", iTextField2));
-        iTextField2.addKeyListener(new InputTextField(iTextField2, "Inertia", iTextField));
+        iTextField.addKeyListener(new InputTextField(iTextField, InputTextField.INERTIA, iTextField2));
+        iTextField2.addKeyListener(new InputTextField(iTextField2, InputTextField.INERTIA, iTextField));
 
     }
 

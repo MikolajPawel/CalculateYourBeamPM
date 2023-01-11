@@ -19,6 +19,10 @@ public class InputTextField extends KeyAdapter {
         this.secondTextField = secondTextField;
     }
 
+    public static final String WITH_NEGATIVE_NUMBERS = "WithNegativeNumbers";
+    public static final String WITHOUT_NEGATIVE_NUMBERS = "WithoutNegativeNumbers";
+    public static final String INERTIA = "Inertia";
+
     @Override
     public void keyTyped(KeyEvent e) {
         char key = e.getKeyChar();
