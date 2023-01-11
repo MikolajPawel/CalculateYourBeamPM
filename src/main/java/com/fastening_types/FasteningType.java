@@ -26,6 +26,9 @@ public class FasteningType {
         this.optionPanes = optionPanes;
     }
 
+    public final String ANALYTICALLY = "Analytically";
+    public final String NUMERICALLY = "Numerically";
+
     OptionPanes optionPanes;
 
     public String mgDiagramTitle;
@@ -440,8 +443,8 @@ public class FasteningType {
             for(int i = 0; i <= 17; i++){
                 results[i] = "";
             }
-            if(isDefault){optionPanes.showWarning("fasteningNotChosen");}
-            else{optionPanes.showWarning("cantCalculate");}
+            if(isDefault){optionPanes.showWarning(optionPanes.FASTENING_NOT_CHOSEN);}
+            else{optionPanes.showWarning(optionPanes.CANT_CALCULATE);}
         }
         return results;
     }
@@ -702,7 +705,7 @@ public class FasteningType {
                 mgFrame.setVisible(true);
                 tFrame.setVisible(true);
             }else {
-                optionPanes.showWarning("errorDidNotCalculate");
+                optionPanes.showWarning(optionPanes.DID_NOT_CALCULATE);
             }
         }
         if(option.equals("y")){
@@ -716,11 +719,11 @@ public class FasteningType {
 
     public String crossSectionCalculation(String type, String valueString){
         if(!canGoFurther){
-            optionPanes.showWarning("errorDidNotCalculate");
+            optionPanes.showWarning(optionPanes.DID_NOT_CALCULATE);
             return "";
         }
         if(valueString.equals("")){
-            optionPanes.showWarning("cantCalculate");
+            optionPanes.showWarning(optionPanes.CANT_CALCULATE);
             return "";
         }
 
@@ -876,11 +879,11 @@ public class FasteningType {
 
     public String deflectionCalculation(String[] valueString, String method){
         if(!canGoFurther){
-            optionPanes.showWarning("errorDidNotCalculate");
+            optionPanes.showWarning(optionPanes.DID_NOT_CALCULATE);
             return "";
         }
         if(valueString[0].equals("")){
-            optionPanes.showWarning("cantCalculate");
+            optionPanes.showWarning(optionPanes.CANT_CALCULATE);
             return "";
         }
 

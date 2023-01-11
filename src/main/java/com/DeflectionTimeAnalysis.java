@@ -48,7 +48,7 @@ public class DeflectionTimeAnalysis {
 
         acceptButton.addActionListener(e ->{
             if(getValuesAndCheck()){proceed(optionPanes);}
-            else{optionPanes.showWarning("cantCalculate");}
+            else{optionPanes.showWarning(optionPanes.CANT_CALCULATE);}
         });
 
         cancelButton.addActionListener(e -> {
@@ -102,13 +102,13 @@ public class DeflectionTimeAnalysis {
                         long timeAfter;
 
                         timeBefore = System.currentTimeMillis();
-                        calculate.deflectionCalculation(deflectionValues, "Analytically");
+                        calculate.deflectionCalculation(deflectionValues, calculate.ANALYTICALLY);
                         timeAfter = System.currentTimeMillis();
 
                         long timeAnalytical = (timeAfter - timeBefore);
 
                         timeBefore = System.currentTimeMillis();
-                        calculate.deflectionCalculation(deflectionValues, "Numerically");
+                        calculate.deflectionCalculation(deflectionValues, calculate.NUMERICALLY);
                         timeAfter = System.currentTimeMillis();
 
                         long timeNumerical = (timeAfter - timeBefore);
@@ -132,7 +132,7 @@ public class DeflectionTimeAnalysis {
                 save.saveToXLSXDeflectionTimeAnalysis(optionPanes, wholeData);
 
                 if(!save.savingCheck && !save.cancelCheck){
-                    optionPanes.showWarning("somethingWentWrong");
+                    optionPanes.showWarning(optionPanes.SOMETHING_WENT_WRONG);
                 }
 
                 Main.view.mainFrame.setEnabled(true);

@@ -42,7 +42,6 @@ public class Language {
     public String yDiagramTitleNumerical;
     public String numericalRadioButton;
     public String deflectionAnalysis;
-    public String deflectionAnalysisCantContinue;
     public String developerAnalysis;
     public String alignPositive;
     public String alignNegative;
@@ -104,7 +103,6 @@ public class Language {
         this.yDiagramTitleNumerical = "Linia ugi\u0119cia belki - numerycznie";
         this.numericalRadioButton = "Numerycznie?";
         this.deflectionAnalysis = "Przeanalizuj dok\u0142adno\u015b\u0107 linii ugi\u0119cia";
-        this.deflectionAnalysisCantContinue = "Nie wykonano oblicze\u0144 linii ugi\u0119cia belki obiema metodami!!!";
         this.developerAnalysis = "Analiza Developera";
         this.alignPositive = "Liczba ekstrmum jest taka sama";
         this.alignNegative = "Liczba ekstremum nie jest taka sama - nie mozna" +
@@ -163,7 +161,6 @@ public class Language {
         this.yDiagramTitleNumerical = "Beam deflection diagram - numerically";
         this.numericalRadioButton = "Numerically?";
         this.deflectionAnalysis = "Analyze accuracy of beam deflection";
-        this.deflectionAnalysisCantContinue = "Deflection was not calculated with both methods!!!";
         this.developerAnalysis = "Developer Analysis";
         this.alignPositive = "Number of extremes are the same";
         this.alignNegative = "Number of extremes are not the same - automatic analysis is not possible";

@@ -141,7 +141,6 @@ public class SavingDeveloper {
             }
 
         }catch (Exception ex) {
-            ex.printStackTrace();
             savingCheck = false;
             cancelCheck = false;
         }

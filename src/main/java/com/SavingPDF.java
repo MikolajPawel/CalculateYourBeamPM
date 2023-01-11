@@ -68,7 +68,7 @@ public class SavingPDF {
                         }
 
                         if(savingFile.exists()){
-                            if(optionPanes.askYesNoUser("overwriteQuestion") == 0){
+                            if(optionPanes.askYesNoUser(optionPanes.OVERWRITE_QUESTION) == 0){
                                 canProceed = true;
                                 uiManager();
                             }else{canProceed = false;}
@@ -329,7 +329,7 @@ public class SavingPDF {
             }
 
         }else{
-            optionPanes.showWarning("errorNotEverythingIsCalculated");
+            optionPanes.showWarning(optionPanes.NOT_EVERYTHING_WAS_CALCULATED);;
             savingCheck = true;
             cancelCheck = false;
         }

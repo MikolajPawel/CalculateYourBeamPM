@@ -233,7 +233,7 @@ public class CalculateYourBeamPM{
         });
 
         clearButton.addActionListener(e -> {
-            if(optionPanes.askYesNoUser("clearQuestion") == 0){
+            if(optionPanes.askYesNoUser(optionPanes.CLEAR_QUESTION) == 0){
                 createVisionForTypeOfFastening();
                 resetCrossSectionPanel("clear");
             }
@@ -274,9 +274,9 @@ public class CalculateYourBeamPM{
 
                         String result;
                         if(!numericalCalculationCheck.isSelected()){
-                            result = calculate.deflectionCalculation(getDeflectionValues(), "Analytically");
+                            result = calculate.deflectionCalculation(getDeflectionValues(), calculate.ANALYTICALLY);
                         }else{
-                            result = calculate.deflectionCalculation(getDeflectionValues(), "Numerically");
+                            result = calculate.deflectionCalculation(getDeflectionValues(), calculate.NUMERICALLY);
                         }
                         mainFrame.setVisible(true);
                         if(!result.equals("")){calculate.showDiagrams("y");}
@@ -308,7 +308,7 @@ public class CalculateYourBeamPM{
 
                         savingPDF.saveToPDF(checkIfCanSave(),calculate,visionType.vis,visionType.savingImagePath);
                         if(!savingPDF.savingCheck && !savingPDF.cancelCheck){
-                            optionPanes.showWarning("somethingWentWrong");
+                            optionPanes.showWarning(optionPanes.SOMETHING_WENT_WRONG);
                         }else if(savingPDF.savingCheck && !savingPDF.cancelCheck){
                             savingPDF.savingCheck = false;
                         }
@@ -354,7 +354,7 @@ public class CalculateYourBeamPM{
         try{
             comboBoxModel = LoadCBModel.comboBoxModel();
         }catch(Exception ex){
-            optionPanes.showWarning("somethingWentWrong");
+            optionPanes.showWarning(optionPanes.SOMETHING_WENT_WRONG);
             System.exit(1);
         }
         return comboBoxModel;
@@ -469,7 +469,7 @@ public class CalculateYourBeamPM{
         try {
             imageLabel.setIcon(new ImageIcon(this.getClass().getResource(visionType.imagePath)));
         } catch (Exception ex) {
-            optionPanes.showWarning("somethingWentWrong");
+            optionPanes.showWarning(optionPanes.SOMETHING_WENT_WRONG);
             System.exit(1);
         }
     }

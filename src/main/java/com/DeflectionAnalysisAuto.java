@@ -50,7 +50,7 @@ public class DeflectionAnalysisAuto {
 
         acceptButton.addActionListener(e ->{
             if(getValuesAndCheck()){proceed(optionPanes);}
-            else{optionPanes.showWarning("cantCalculate");}
+            else{optionPanes.showWarning(optionPanes.CANT_CALCULATE);}
         });
 
         cancelButton.addActionListener(e -> {
@@ -99,8 +99,8 @@ public class DeflectionAnalysisAuto {
 
                         String[] deflectionValues = setRandomNumDeflectionCalc();
 
-                        calculate.deflectionCalculation(deflectionValues, "Analytically");
-                        calculate.deflectionCalculation(deflectionValues, "Numerically");
+                        calculate.deflectionCalculation(deflectionValues, calculate.ANALYTICALLY);
+                        calculate.deflectionCalculation(deflectionValues, calculate.NUMERICALLY);
 
                         List<String> result = new ArrayList<>();
                         result.add(String.valueOf(calculate.mgMax));
@@ -129,8 +129,8 @@ public class DeflectionAnalysisAuto {
 
                             String[] deflectionValues = setRandomNumDeflectionCalc();
 
-                            calculate.deflectionCalculation(deflectionValues, "Analytically");
-                            calculate.deflectionCalculation(deflectionValues, "Numerically");
+                            calculate.deflectionCalculation(deflectionValues, calculate.ANALYTICALLY);
+                            calculate.deflectionCalculation(deflectionValues, calculate.NUMERICALLY);
 
                             List<String> result = new ArrayList<>();
                             result.add(String.valueOf(calculate.mgMax));
@@ -153,7 +153,7 @@ public class DeflectionAnalysisAuto {
                         selectedBeam(beamNumberComboBox.getSelectedIndex()));
 
                 if(!save.savingCheck && !save.cancelCheck){
-                    optionPanes.showWarning("somethingWentWrong");
+                    optionPanes.showWarning(optionPanes.SOMETHING_WENT_WRONG);
                 }
 
                 Main.view.mainFrame.setEnabled(true);
