@@ -11,13 +11,13 @@ public class FasteningType_3 extends FasteningType {
 
     @Override
     double calculateRay() {
-        ray = ((5*q1*ab)/4);
+        ray = (-rcy) + (q1*ab);
         return ray;
     }
 
     @Override
     double calculateRcy() {
-        rcy = (-(q1*ab));
+        rcy = (-(0.5*q1*ab))/2;
         return rcy;
     }
 
@@ -31,7 +31,8 @@ public class FasteningType_3 extends FasteningType {
     @Override
     double formulaMgBC(double x) {
         double mg;
-        mg = (ray*x) - ((q1*(x-ab)*(x-ab))/2);
+        double x1 = (x-ab);
+        mg = (ray*x) - ((q1*x1*x1)/2);
         return mg;
     }
 
@@ -39,7 +40,7 @@ public class FasteningType_3 extends FasteningType {
     double formulaMgCD(double x) {
         double mg;
         double x2 = (x-(2*ab));
-        mg = formulaMgBC(x) - (rcy*x2) + ((q1*x2*x2)/2);
+        mg = formulaMgBC(x) + (rcy*x2) + ((q1*x2*x2)/2);
         return mg;
     }
 
@@ -125,9 +126,8 @@ public class FasteningType_3 extends FasteningType {
 
     @Override
     public void calculator() {
-        calculateRay();
         calculateRcy();
-
+        calculateRay();
 
     }
 }

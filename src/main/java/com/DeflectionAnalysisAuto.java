@@ -81,11 +81,11 @@ public class DeflectionAnalysisAuto {
             protected Void doInBackground(){
                 progressFrame = new ProgressFrame(progressFasteningMsg, progressTitle);
 
-              List<List<String>> allResults = new ArrayList<>();
+              List<List<List<String>>> allResults = new ArrayList<>();
 
                 if(selectedBeam(beamNumberComboBox.getSelectedIndex()) !=0){
 
-                    List<String> results = new ArrayList<>();
+                    List<List<String>> results = new ArrayList<>();
 
                     FasteningVisions visionType = new FasteningVisions(selectedBeam(
                             beamNumberComboBox.getSelectedIndex()));
@@ -102,8 +102,10 @@ public class DeflectionAnalysisAuto {
                         calculate.deflectionCalculation(deflectionValues, "Analytically");
                         calculate.deflectionCalculation(deflectionValues, "Numerically");
 
-                        String result;
-                        result = calculate.doDeflectionAnalysis();
+                        List<String> result = new ArrayList<>();
+                        result.add(String.valueOf(calculate.mgMax));
+                        result.add(String.valueOf(calculate.ei));
+                        result.add(calculate.doDeflectionAnalysis());
                         results.add(result);
 
                     }
@@ -117,7 +119,7 @@ public class DeflectionAnalysisAuto {
                         FasteningVisions visionType = new FasteningVisions(selectedBeam(i));
                         FasteningType calculate;
 
-                        List<String> results = new ArrayList<>();
+                        List<List<String>> results = new ArrayList<>();
 
                         for(int k=0; k<(int)iterationsSpinner.getValue(); k++){
 
@@ -130,8 +132,10 @@ public class DeflectionAnalysisAuto {
                             calculate.deflectionCalculation(deflectionValues, "Analytically");
                             calculate.deflectionCalculation(deflectionValues, "Numerically");
 
-                            String result;
-                            result = calculate.doDeflectionAnalysis();
+                            List<String> result = new ArrayList<>();
+                            result.add(String.valueOf(calculate.mgMax));
+                            result.add(String.valueOf(calculate.ei));
+                            result.add(calculate.doDeflectionAnalysis());
                             results.add(result);
 
                         }

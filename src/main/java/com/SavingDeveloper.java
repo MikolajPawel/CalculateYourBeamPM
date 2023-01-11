@@ -24,7 +24,7 @@ public class SavingDeveloper {
         this.optionPanes = optionPanes;
     }
 
-    public void saveToXLSXDeflectionAccuracyAnalysis(OptionPanes optionPanes, List<List<String>> results,
+    public void saveToXLSXDeflectionAccuracyAnalysis(OptionPanes optionPanes, List<List<List<String>>> results,
                                                      int beamNumber){
 
         this.optionPanes = optionPanes;
@@ -82,7 +82,7 @@ public class SavingDeveloper {
 
                 for(int p=0; p<sheetsNumber; p++){
 
-                    List<String> resultAutomatic = results.get(p);
+                    List<List<String>> resultAutomatic = results.get(p);
 
                     int beamNo;
                     if(beamNumber == 0){beamNo = selectedBeam(p);}
@@ -96,7 +96,7 @@ public class SavingDeveloper {
 
                     Map<String, Object[]> accuracyData = new TreeMap<>();
 
-                    accuracyData.put("1", new Object[]{"Iteration", "Delta [%]"});
+                    accuracyData.put("1", new Object[]{"Iteration", "Mg max[Nm]", "EIz[Nm^2]", "Delta [%]"});
 
                     int rowCount = 2;
 
@@ -106,7 +106,9 @@ public class SavingDeveloper {
                         List<String> tempList = new ArrayList<>();
 
                         tempList.add(String.valueOf(i + 1));
-                        tempList.add(resultAutomatic.get(i));
+                        tempList.add(resultAutomatic.get(i).get(0));
+                        tempList.add(resultAutomatic.get(i).get(1));
+                        tempList.add(resultAutomatic.get(i).get(2));
 
                         obj = tempList.toArray();
 
@@ -120,7 +122,7 @@ public class SavingDeveloper {
                         row = spreadsheet.createRow(i);
                         Object[] obj = accuracyData.get(String.valueOf(i));
 
-                        for (int k = 0; k < 2; k++) {
+                        for (int k = 0; k < 4; k++) {
                             Cell cell = row.createCell(k);
                             cell.setCellValue((String) obj[k]);
                         }
