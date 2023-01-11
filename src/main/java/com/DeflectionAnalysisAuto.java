@@ -81,11 +81,11 @@ public class DeflectionAnalysisAuto {
             protected Void doInBackground(){
                 progressFrame = new ProgressFrame(progressFasteningMsg, progressTitle);
 
-                List<List<List<List<String>>>> allResults = new ArrayList<>();
+              List<List<String>> allResults = new ArrayList<>();
 
                 if(selectedBeam(beamNumberComboBox.getSelectedIndex()) !=0){
 
-                    List<List<List<String>>> results = new ArrayList<>();
+                    List<String> results = new ArrayList<>();
 
                     FasteningVisions visionType = new FasteningVisions(selectedBeam(
                             beamNumberComboBox.getSelectedIndex()));
@@ -102,7 +102,7 @@ public class DeflectionAnalysisAuto {
                         calculate.deflectionCalculation(deflectionValues, "Analytically");
                         calculate.deflectionCalculation(deflectionValues, "Numerically");
 
-                        List<List<String>> result;
+                        String result;
                         result = calculate.doDeflectionAnalysis();
                         results.add(result);
 
@@ -117,7 +117,7 @@ public class DeflectionAnalysisAuto {
                         FasteningVisions visionType = new FasteningVisions(selectedBeam(i));
                         FasteningType calculate;
 
-                        List<List<List<String>>> results = new ArrayList<>();
+                        List<String> results = new ArrayList<>();
 
                         for(int k=0; k<(int)iterationsSpinner.getValue(); k++){
 
@@ -130,7 +130,7 @@ public class DeflectionAnalysisAuto {
                             calculate.deflectionCalculation(deflectionValues, "Analytically");
                             calculate.deflectionCalculation(deflectionValues, "Numerically");
 
-                            List<List<String>> result;
+                            String result;
                             result = calculate.doDeflectionAnalysis();
                             results.add(result);
 
@@ -143,7 +143,7 @@ public class DeflectionAnalysisAuto {
                 }
 
                 SavingDeveloper save = new SavingDeveloper();
-                save.setSavingLanguage(optionPanes, "null", "null");
+                save.setSavingLanguage(optionPanes);
 
                 save.saveToXLSXDeflectionAccuracyAnalysis(optionPanes, allResults,
                         selectedBeam(beamNumberComboBox.getSelectedIndex()));

@@ -182,8 +182,6 @@ public class CalculateYourBeamPM{
     private JMenu fileMenu = new JMenu();
     private JMenuItem savingToPDFMenu = new JMenuItem();
     private JMenu developerAnalysisMenu = new JMenu();
-    private JMenu deflectionAccuracyAnalysisOption = new JMenu();
-    private JMenuItem deflectionAccuracyAnalysisManually = new JMenuItem();
     private JMenuItem deflectionAccuracyAnalysisAutomatically = new JMenuItem();
     private JMenuItem deflectionTimeAnalysisOption = new JMenuItem();
 
@@ -332,26 +330,6 @@ public class CalculateYourBeamPM{
                         ymaxTextField.setText("");
                     }
 
-                    case "DeflectionAnalysisManually" -> {
-                        progressFrame = new ProgressFrame(lang.progressFasteningMsg,lang.progressTitle);
-
-                        List<List<String>> result;
-                        result = calculate.doDeflectionAnalysis();
-                        if(result.get(0).get(0).equals("1")){
-                            savingDeveloper.saveToPDFManualAnalysis(result, visionType.savingImagePath, optionPanes,
-                                    calculate.yChartAna, calculate.yChartNum);
-                            if(!savingDeveloper.savingCheck && !savingDeveloper.cancelCheck){
-                                optionPanes.showWarning("somethingWentWrong");
-                            }else if(savingDeveloper.savingCheck && !savingDeveloper.cancelCheck){
-                            savingDeveloper.savingCheck = false;
-                            }
-                        }else{
-                            optionPanes.showWarning("deflectionAnalysisStop");
-                        }
-                        savingDeveloper.canProceed = false;
-
-                    }
-
                 }
 
                 mainFrame.setEnabled(true);
@@ -487,10 +465,6 @@ public class CalculateYourBeamPM{
         numericalCalculationCheck.setEnabled(visionType.vis[48]);
 
         calculate.canGoFurther = false;
-        calculate.peaksYNumerically.clear();
-        calculate.peaksXNumerically.clear();
-        calculate.peaksXAnalytically.clear();
-        calculate.peaksYAnalytically.clear();
 
         try {
             imageLabel.setIcon(new ImageIcon(this.getClass().getResource(visionType.imagePath)));
@@ -723,7 +697,6 @@ public class CalculateYourBeamPM{
         fileMenu.setText(lang.file);
         savingToPDFMenu.setText(lang.saving);
         developerAnalysisMenu.setText(lang.developerAnalysis);
-        deflectionAccuracyAnalysisOption.setText(lang.deflectionAnalysis);
         choseFasteningTypeButton.setText(lang.fasteningType);
         dataLabel.setText(lang.data);
         resultsLabel.setText(lang.results);
@@ -732,7 +705,7 @@ public class CalculateYourBeamPM{
         resultsCrossSectionLabel.setText(lang.resultsCrossSection);
         calculateCrossSectionButton.setText(lang.calculateCrossSection);
         savingPDF.setSavingLanguage(lang.data, lang.results, optionPanes);
-        savingDeveloper.setSavingLanguage(optionPanes, lang.alignPositive, lang.alignNegative);
+        savingDeveloper.setSavingLanguage(optionPanes);
         fasteningChose.setLanguage(lang.fasteningType, lang.accept, lang.cancel);
         deflectionAnalysisAuto.setLanguage(lang.selectRanges,lang.accept, lang.cancel,
                 lang.beamNumber, lang.iterationsNumber, lang.progressFasteningMsg, lang.progressTitle);
@@ -748,8 +721,7 @@ public class CalculateYourBeamPM{
         numericalCalculationCheck.setText(lang.numericalRadioButton);
         calculate.setLanguage(lang.mgDiagramTitle, lang.tDiagramTitle, lang.yDiagramTitle,
                 lang.yDiagramTitleNumerical, optionPanes);
-        deflectionAccuracyAnalysisManually.setText(lang.deflectionAnalysisManually);
-        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysisAutomatically);
+        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysis);
         deflectionTimeAnalysisOption.setText(lang.analyseTime);
     }
 
@@ -767,12 +739,8 @@ public class CalculateYourBeamPM{
         languageMenu2.add(languageEN);
         menuBar.add(languageMenu);
         developerAnalysisMenu.setText(lang.developerAnalysis);
-        deflectionAccuracyAnalysisOption.setText(lang.deflectionAnalysis);
-        developerAnalysisMenu.add(deflectionAccuracyAnalysisOption);
-        deflectionAccuracyAnalysisManually.setText(lang.deflectionAnalysisManually);
-        deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisManually);
-        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysisAutomatically);
-        deflectionAccuracyAnalysisOption.add(deflectionAccuracyAnalysisAutomatically);
+        developerAnalysisMenu.add(deflectionAccuracyAnalysisAutomatically);
+        deflectionAccuracyAnalysisAutomatically.setText(lang.deflectionAnalysis);
         deflectionTimeAnalysisOption.setText(lang.analyseTime);
         developerAnalysisMenu.add(deflectionTimeAnalysisOption);
         menuBar.add(developerAnalysisMenu);
@@ -786,10 +754,6 @@ public class CalculateYourBeamPM{
         languageEN.addActionListener(e -> {
             lang.setEN();
             setLanguage();
-        });
-
-        deflectionAccuracyAnalysisManually.addActionListener(e -> {
-            swingWorker("DeflectionAnalysisManually");
         });
 
         deflectionAccuracyAnalysisAutomatically.addActionListener(e ->{

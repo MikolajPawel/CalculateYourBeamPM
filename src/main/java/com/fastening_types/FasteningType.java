@@ -635,7 +635,6 @@ public class FasteningType {
         }
     }
 
-
     public void doDiagrams(String option){
         if(option.equals("mgAndT")){
 
@@ -668,15 +667,9 @@ public class FasteningType {
 
 
             if(yNumerically){
-                peaks(peaksXNumerically, peaksYNumerically);
-                yChart.setTitle("N");
-                yChartNum = yChart.createBufferedImage(500, 400);
-                yChart.setTitle(yDiagramTitleNumerical);
+                yMaxNum = yMax;
             }else{
-                peaks(peaksXAnalytically, peaksYAnalytically);
-                yChart.setTitle("A");
-                yChartAna = yChart.createBufferedImage(500, 400);
-                yChart.setTitle(yDiagramTitle);
+                yMaxAna = yMax;
             }
 
         }
@@ -1234,105 +1227,16 @@ public class FasteningType {
         return maxI;
     }
 
-    public List<Double> peaksXNumerically = new ArrayList<>();
-    public List<Double> peaksYNumerically = new ArrayList<>();
+    double yMaxAna;
+    double yMaxNum;
 
-    public List<Double> peaksXAnalytically = new ArrayList<>();
-    public List<Double> peaksYAnalytically = new ArrayList<>();
+    public String doDeflectionAnalysis(){
+        DecimalFormat df = new DecimalFormat("#.#");
+        df.setMaximumFractionDigits(10);
 
+        double delta = (Math.abs(yMaxAna - yMaxNum)/Math.abs(yMaxAna))*100;
 
-    private void peaks(List<Double> peaksX, List<Double> peaksY){
-
-        peaksX.clear();
-        peaksY.clear();
-
-        peaksX.add(ySeries.getDataItem(0).getXValue());
-        peaksY.add(ySeries.getDataItem(0).getYValue());
-
-
-        for(int i = 1; i < (ySeries.getItemCount()-2); i++){
-            double valueAt_i_minus1 = Math.abs(ySeries.getDataItem(i-1).getYValue());
-            double valueAt_i = Math.abs(ySeries.getDataItem(i).getYValue());
-            double valueAt_i_plus1 = Math.abs(ySeries.getDataItem(i+1).getYValue());
-
-            if(valueAt_i >= valueAt_i_minus1 && valueAt_i > valueAt_i_plus1){
-                peaksX.add(ySeries.getDataItem(i).getXValue());
-                peaksY.add(ySeries.getDataItem(i).getYValue());
-            }
-
-        }
-
-        peaksX.add(ySeries.getDataItem(ySeries.getItemCount()-1).getXValue());
-        peaksY.add(ySeries.getDataItem(ySeries.getItemCount()-1).getYValue());
-
-    }
-
-    public List<List<String>> doDeflectionAnalysis(){
-        List<List<String>> deflectionAnalysisResults = new ArrayList<>();
-        List<String> analysisCheck = new ArrayList<>();
-        if(peaksXAnalytically.isEmpty() || peaksXNumerically.isEmpty()){
-
-            analysisCheck.add("0");
-            deflectionAnalysisResults.add(analysisCheck);
-
-        }else {
-            analysisCheck.add("1");
-
-            DecimalFormat df = new DecimalFormat("#.#");
-            df.setMaximumFractionDigits(20);
-
-            if(peaksXNumerically.size() == peaksXAnalytically.size()){
-                analysisCheck.add("1");
-                analysisCheck.add(String.valueOf(peaksXAnalytically.size()));
-
-                deflectionAnalysisResults.add(analysisCheck);
-                int iteration = peaksXAnalytically.size();
-
-                for(int i=0; i<iteration; i++){
-                    List<String> peaksAnalysis = new ArrayList<>();
-
-                    double xAnalytically = peaksXAnalytically.get(i);
-                    double yAnalytically = peaksYAnalytically.get(i);
-                    double xNumerically  = peaksXNumerically.get(i);
-                    double yNumerically  = peaksYNumerically.get(i);
-                    double deltaError = (Math.abs(yAnalytically - yNumerically)/Math.abs(yAnalytically))*100;
-
-                    peaksAnalysis.add(String.valueOf(df.format(xAnalytically)));
-                    peaksAnalysis.add(String.valueOf(df.format(yAnalytically)));
-                    peaksAnalysis.add(String.valueOf(df.format(xNumerically)));
-                    peaksAnalysis.add(String.valueOf(df.format(yNumerically)));
-                    peaksAnalysis.add(String.valueOf(df.format(deltaError)));
-
-                    deflectionAnalysisResults.add(peaksAnalysis);
-                }
-
-            }else {
-                analysisCheck.add("0");
-
-                analysisCheck.add(String.valueOf(peaksXAnalytically.size()));
-                analysisCheck.add(String.valueOf(peaksXNumerically.size()));
-                deflectionAnalysisResults.add(analysisCheck);
-
-                for(int i=0; i<peaksXAnalytically.size(); i++){
-                    List<String> peaksAnalytically = new ArrayList<>();
-
-                    peaksAnalytically.add(String.valueOf(df.format(peaksXAnalytically.get(i))));
-                    peaksAnalytically.add(String.valueOf(df.format(peaksYAnalytically.get(i))));
-
-                    deflectionAnalysisResults.add(peaksAnalytically);
-                }
-                for(int i=0; i<peaksXNumerically.size(); i++){
-                    List<String> peaksNumerically = new ArrayList<>();
-
-                    peaksNumerically.add(String.valueOf(df.format(peaksXNumerically.get(i))));
-                    peaksNumerically.add(String.valueOf(df.format(peaksYNumerically.get(i))));
-
-                    deflectionAnalysisResults.add(peaksNumerically);
-                }
-            }
-        }
-
-        return deflectionAnalysisResults;
+        return String.valueOf(df.format(delta));
     }
 
 }

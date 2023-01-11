@@ -127,7 +127,7 @@ public class DeflectionTimeAnalysis {
                 }
 
                 SavingDeveloper save = new SavingDeveloper();
-                save.setSavingLanguage(optionPanes, "null", "null");
+                save.setSavingLanguage(optionPanes);
 
                 save.saveToXLSXDeflectionTimeAnalysis(optionPanes, wholeData);
 
