@@ -96,7 +96,8 @@ public class SavingDeveloper {
 
                     Map<String, Object[]> accuracyData = new TreeMap<>();
 
-                    accuracyData.put("1", new Object[]{"Iteration", "Mg max[Nm]", "EIz[Nm^2]", "Delta [%]"});
+                    accuracyData.put("1", new Object[]{"Iteration", "Mg max[Nm]", "EIz[Nm^2]",
+                            "Delta Y [%]", "Delta X [%]"});
 
                     int rowCount = 2;
 
@@ -109,6 +110,7 @@ public class SavingDeveloper {
                         tempList.add(resultAutomatic.get(i).get(0));
                         tempList.add(resultAutomatic.get(i).get(1));
                         tempList.add(resultAutomatic.get(i).get(2));
+                        tempList.add(resultAutomatic.get(i).get(3));
 
                         obj = tempList.toArray();
 
@@ -122,7 +124,7 @@ public class SavingDeveloper {
                         row = spreadsheet.createRow(i);
                         Object[] obj = accuracyData.get(String.valueOf(i));
 
-                        for (int k = 0; k < 4; k++) {
+                        for (int k = 0; k < 5; k++) {
                             Cell cell = row.createCell(k);
                             cell.setCellValue((String) obj[k]);
                         }

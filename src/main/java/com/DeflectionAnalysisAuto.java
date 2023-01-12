@@ -104,7 +104,10 @@ public class DeflectionAnalysisAuto {
                         List<String> result = new ArrayList<>();
                         result.add(String.valueOf(calculate.mgMax));
                         result.add(String.valueOf(calculate.ei));
-                        result.add(calculate.doDeflectionAnalysis());
+                        String[] deflectionAnalysis = calculate.doDeflectionAnalysis();
+                        result.add(deflectionAnalysis[0]);
+                        result.add(deflectionAnalysis[1]);
+
                         results.add(result);
 
                     }
@@ -134,7 +137,10 @@ public class DeflectionAnalysisAuto {
                             List<String> result = new ArrayList<>();
                             result.add(String.valueOf(calculate.mgMax));
                             result.add(String.valueOf(calculate.ei));
-                            result.add(calculate.doDeflectionAnalysis());
+                            String[] deflectionAnalysis = calculate.doDeflectionAnalysis();
+                            result.add(deflectionAnalysis[0]);
+                            result.add(deflectionAnalysis[1]);
+
                             results.add(result);
 
                         }

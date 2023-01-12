@@ -668,13 +668,6 @@ public class FasteningType {
                     yDiagramTitle, "x[m]","y[m]",yDataset,
                     PlotOrientation.VERTICAL,false,true,false);
 
-
-            if(yNumerically){
-                yMaxNum = yMax;
-            }else{
-                yMaxAna = yMax;
-            }
-
         }
 
     }
@@ -898,8 +891,18 @@ public class FasteningType {
 
         if(method.equals("Analytically")){yNumerically = false; deflectionCalculator();}
         else if(method.equals("Numerically")){yNumerically = true; deflectionNumericalCalculation();}
-        yMax = yMax();
+
+        double[] maxY = yMax();
+        yMax = maxY[0];
         result = yMax;
+
+        if(yNumerically){
+            yMaxNum = yMax;
+            xForYMaxNum = maxY[1];
+        }else{
+            yMaxAna = yMax;
+            xForYMaxAna = maxY[1];
+        }
 
         doDiagrams("y");
 
@@ -1210,36 +1213,60 @@ public class FasteningType {
 
     }
 
-    double yMax(){
+    double[] yMax(){
         double[] y = new double[nodes*5];
+        double[] x = new double[nodes*5];
         for(int i=0; i<nodes; i++){
             y[i] = Math.abs(yAB[i]);
             y[i+nodes] = Math.abs(yBC[i]);
             y[i+(nodes*2)] = Math.abs(yCD[i]);
             y[i+(nodes*3)] = Math.abs(yDE[i]);
             y[i+(nodes*4)] = Math.abs(yEF[i]);
+
+            x[i] = xAB[i];
+            x[i+nodes] = xBC[i];
+            x[i+(nodes*2)] = xCD[i];
+            x[i+(nodes*3)] = xDE[i];
+            x[i+(nodes*4)] = xEF[i];
         }
 
         double maxI = y[0];
+        double xNodeForMax = x[0];
         for(int i=1; i<(nodes*5); i++){
             if(y[i]>maxI){
                 maxI = y[i];
+                xNodeForMax = x[i];
             }
         }
 
-        return maxI;
+        double[] maxY =  new double[2];
+        maxY[0] = maxI;
+        maxY[1] = xNodeForMax;
+        System.out.println(xNodeForMax);
+
+
+        return maxY;
     }
 
     double yMaxAna;
     double yMaxNum;
+    double xForYMaxAna;
+    double xForYMaxNum;
 
-    public String doDeflectionAnalysis(){
+    public String[] doDeflectionAnalysis(){
         DecimalFormat df = new DecimalFormat("#.#");
         df.setMaximumFractionDigits(10);
 
-        double delta = (Math.abs(yMaxAna - yMaxNum)/Math.abs(yMaxAna))*100;
+        String[] result = new String[2];
+        double delta;
 
-        return String.valueOf(df.format(delta));
+        delta = (Math.abs(yMaxAna - yMaxNum)/Math.abs(yMaxAna))*100;
+        result[0] = String.valueOf(df.format(delta));
+
+        delta = ((xForYMaxAna - xForYMaxNum)/xForYMaxAna)*100;
+        result[1] = String.valueOf(df.format(delta));
+
+        return result;
     }
 
 }
