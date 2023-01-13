@@ -142,11 +142,11 @@ public class SavingPDF {
                             case 2 -> {prefix = "F3 = ";unit = " N";}
                             case 3 -> {prefix = "F4 = ";unit = " N";}
                             case 4 -> {prefix = "F5 = ";unit = " N";}
-                            case 5 -> {prefix = "Q1 = ";unit = " Nm";}
-                            case 6 -> {prefix = "Q2 = ";unit = " Nm";}
-                            case 7 -> {prefix = "Q3 = ";unit = " Nm";}
-                            case 8 -> {prefix = "Q4 = ";unit = " Nm";}
-                            case 9 -> {prefix = "Q5 = ";unit = " Nm";}
+                            case 5 -> {prefix = "Q1 = ";unit = " N/m";}
+                            case 6 -> {prefix = "Q2 = ";unit = " N/m";}
+                            case 7 -> {prefix = "Q3 = ";unit = " N/m";}
+                            case 8 -> {prefix = "Q4 = ";unit = " N/m";}
+                            case 9 -> {prefix = "Q5 = ";unit = " N/m";}
                             case 10 -> {prefix = "L1 = ";unit = " m";}
                             case 11 -> {prefix = "L2 = ";unit = " m";}
                             case 12 -> {prefix = "L3 = ";unit = " m";}

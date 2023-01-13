@@ -1242,7 +1242,6 @@ public class FasteningType {
         double[] maxY =  new double[2];
         maxY[0] = maxI;
         maxY[1] = xNodeForMax;
-        System.out.println(xNodeForMax);
 
 
         return maxY;
@@ -1263,7 +1262,7 @@ public class FasteningType {
         delta = (Math.abs(yMaxAna - yMaxNum)/Math.abs(yMaxAna))*100;
         result[0] = String.valueOf(df.format(delta));
 
-        delta = ((xForYMaxAna - xForYMaxNum)/xForYMaxAna)*100;
+        delta = Math.abs((xForYMaxAna - xForYMaxNum)/xForYMaxAna)*100;
         result[1] = String.valueOf(df.format(delta));
 
         return result;
