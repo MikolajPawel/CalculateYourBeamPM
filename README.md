@@ -1,5 +1,5 @@
 # CalculateYourBeamPM
-##### If you are interested in INSTALLING this application visit https://drive.google.com/drive/folders/12vZ9Rdjz5ybEGq0U1wokHk06kzf6d13s?usp=share_link, download ***Installation_files*** -> extract ***Installation_files.rar*** -> place content of ***Installation_files.rar*** wherever you like -> create shortcut for ***Calculate Your Beam PM.exe*** on your desktop -> enjoy :)
+##### If you are interested in INSTALLING this application visit https://drive.google.com/drive/folders/12vZ9Rdjz5ybEGq0U1wokHk06kzf6d13s?usp=share_link, <br />download ***Installation_files*** -> extract ***Installation_files.zip*** -> place content of ***Installation_files.zip*** wherever you like -> create shortcut for ***Calculate Your Beam PM.exe*** on your desktop -> enjoy :)
 ### SDK: 17
 There are several external libraries used in this project
 <br />so be sure to work with Maven in order to get them.
